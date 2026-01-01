@@ -1,9 +1,3 @@
----
-layout: single
-title: "Home"
-author_profile: true
----
-
 # 大石 裕晃 (Hiroaki Ohishi, Ph.D.)
 
 **獨協医科大学 ゲノム医科学 准教授** **JST 科学技術振興機構 さきがけ研究者（兼任）**
