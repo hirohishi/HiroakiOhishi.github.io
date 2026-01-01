@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-        <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y7SVEYB4Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,10 +18,10 @@
     <style>
         :root {
             /* Colors */
-            --primary: #0f172a;      /* Deep Navy */
+            --primary: #0f172a;       /* Deep Navy */
             --primary-light: #334155;
-            --accent: #0ea5e9;       /* Modern Blue */
-            --bg-body: #f8fafc;      /* Very light gray blue */
+            --accent: #0ea5e9;        /* Modern Blue */
+            --bg-body: #f8fafc;       /* Very light gray blue */
             --bg-card: #ffffff;
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -90,6 +89,33 @@
             height: 800px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
             border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 20;
+            display: flex;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .lang-switch a {
+            color: rgba(255, 255, 255, 0.6);
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-switch a.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
             pointer-events: none;
         }
 
@@ -447,7 +473,7 @@
 
         /* Print Styles */
         @media print {
-            .hero::before, .sticky-nav, .social-links { display: none; }
+            .hero::before, .sticky-nav, .social-links, .lang-switch { display: none; }
             .hero { padding: 40px 0; color: black; background: white; }
             body { background: white; color: black; }
             .card, .pub-item, .tag { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
@@ -461,12 +487,18 @@
             .grid-cards { grid-template-columns: 1fr; }
             .list-row { flex-direction: column; gap: 4px; }
             .nav-inner { gap: 1.5rem; }
+            .lang-switch { top: 16px; right: 16px; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
+        <div class="lang-switch">
+            <a href="index.html" class="active">JP</a>
+            <a href="en.html">EN</a>
+        </div>
+
         <div class="container hero-content">
             <h1>大石 裕晃</h1>
             <p class="subtitle">Hiroaki Ohishi, Ph.D.</p>
