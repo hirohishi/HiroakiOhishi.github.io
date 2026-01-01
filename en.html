@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y7SVEYB4Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3Y7SVEYB4Y');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiroaki Ohishi, Ph.D. | Dokkyo Medical University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Colors */
+            --primary: #0f172a;       /* Deep Navy */
+            --primary-light: #334155;
+            --accent: #0ea5e9;        /* Modern Blue */
+            --bg-body: #f8fafc;       /* Very light gray blue */
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            
+            /* Spacing & Layout */
+            --container-width: 960px;
+            --header-height: 70px;
+            --radius: 12px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: calc(var(--header-height) + 20px);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        ul { list-style: none; }
+
+        /* Typography Utilities */
+        h1, h2, h3 { font-family: 'Noto Serif JP', serif; line-height: 1.3; }
+        .text-sm { font-size: 0.875rem; }
+        .text-muted { color: var(--text-muted); }
+        .font-bold { font-weight: 700; }
+
+        /* Layout Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Header Section --- */
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Abstract Background Decoration */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 20;
+            display: flex;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .lang-switch a {
+            color: rgba(255, 255, 255, 0.6);
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .lang-switch a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .lang-switch a.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .affiliation-box p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* --- Navigation --- */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-inner {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 0 24px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            scrollbar-width: none; /* Hide scrollbar Firefox */
+        }
+        .nav-inner::-webkit-scrollbar { display: none; }
+
+        .sticky-nav a {
+            padding: 18px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .sticky-nav a:hover, .sticky-nav a.active {
+            color: var(--primary);
+        }
+
+        .sticky-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* --- Main Content --- */
+        main {
+            padding: 60px 0 100px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+        }
+
+        section h3 {
+            font-size: 1.1rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--primary-light);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Keywords */
+        .keywords-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition: 0.2s;
+        }
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Timeline (Career/Education) */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -2.05rem; /* Adjust based on border width and dot size */
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-body);
+            border: 3px solid var(--text-muted);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .timeline-item.current .timeline-dot {
+            border-color: var(--accent);
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+        }
+
+        .timeline-date {
+            font-family: 'Inter', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .timeline-content {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        /* Cards (Grants) */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(14, 165, 233, 0.2);
+        }
+
+        .badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #eff6ff;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+        .badge.ended {
+            background: #f1f5f9;
+            color: var(--text-muted);
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: auto;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        /* Publications */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .pub-item {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid transparent;
+            transition: 0.2s;
+        }
+        
+        .pub-item:hover {
+            border-left-color: var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .pub-authors strong {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: rgba(14, 165, 233, 0.4);
+            text-underline-offset: 3px;
+        }
+
+        .pub-journal {
+            font-family: 'Noto Serif JP', serif;
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        /* Awards & Activities */
+        .list-row {
+            display: flex;
+            gap: 24px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            align-items: baseline;
+        }
+        .list-row:last-child { border-bottom: none; }
+        
+        .list-date {
+            font-family: 'Inter', monospace;
+            font-weight: 600;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            width: 100px;
+        }
+
+        .society-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .society-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .society-chip::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .hero::before, .sticky-nav, .social-links, .lang-switch { display: none; }
+            .hero { padding: 40px 0; color: black; background: white; }
+            body { background: white; color: black; }
+            .card, .pub-item, .tag { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+            a { text-decoration: none; color: black; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .grid-cards { grid-template-columns: 1fr; }
+            .list-row { flex-direction: column; gap: 4px; }
+            .nav-inner { gap: 1.5rem; }
+            .lang-switch { top: 16px; right: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="lang-switch">
+            <a href="index.html">JP</a>
+            <a href="en.html" class="active">EN</a>
+        </div>
+
+        <div class="container hero-content">
+            <h1>Hiroaki Ohishi, Ph.D.</h1>
+            <p class="subtitle">Associate Professor, Dokkyo Medical University</p>
+            
+            <div class="hero-details">
+                <div class="affiliation-box">
+                    <p class="font-bold">Associate Professor</p>
+                    <p>Department of Genome Medicine, Dokkyo Medical University</p>
+                    <p>JST PRESTO Researcher (Concurrent)</p>
+                </div>
+                <div class="specialty-box">
+                    <p class="text-sm">Specialty: Life Science / Genome Biology</p>
+                    <p class="text-sm">Degree: Ph.D. (Medical Science) (Kyushu University)</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://orcid.org/0000-0001-6672-4093" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#fff" d="M86.3 186.2H70.9V79.1h15.4v107.1zM78.6 51.7c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z"/><path fill="#fff" d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z"/></svg>
+                    ORCID
+                </a>
+                <a href="https://researchmap.jp/R000003703?lang=en" target="_blank" rel="noopener">
+                    researchmap
+                </a>
+                <a href="https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202001018320334180" target="_blank" rel="noopener">
+                    J-GLOBAL
+                </a>
+                <a href="mailto:hirohishi@outlook.jp">
+                    ✉️ hirohishi📧outlook.jp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sticky-nav">
+        <div class="nav-inner">
+            <a href="#about">Research</a>
+            <a href="#keywords">Keywords</a>
+            <a href="#career">Career</a>
+            <a href="#grants">Grants</a>
+            <a href="#publications">Publications</a>
+            <a href="#awards">Awards</a>
+            <a href="#activities">Activities</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section id="about">
+                
+            <h2>Research Summary & Recruitment</h2>
+            <div style="background: white; padding: 32px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                <p style="margin-bottom: 1.5rem;">
+                    Our research group utilizes cutting-edge fluorescence imaging technologies to elucidate biological phenomena based on spatiotemporal dynamics. Specifically, our primary themes include the development of novel epigenome editing technologies, the regulatory mechanisms of genomic imprinting, and the elucidation of transcriptional regulation mechanisms driven by 3D genome architecture.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    We are actively recruiting PhD students and researchers (Postdocs) to join our team in developing unique research that fuses "Epigenomics" and "Imaging."
+                </p>
+                <p>
+                    Dokkyo Medical University is located in a serene environment rich in nature, offering a perfect setting to immerse oneself in research. We provide an optimal environment for building your career, equipped with a comprehensive common equipment center, abundant resources unique to a medical school, and a robust research support system. We invite those with the ambition to pioneer science from a unique perspective to contact us.
+                </p>
+            </div>
+        </section>
+
+        <section id="keywords">
+            <h2>Research Keywords</h2>
+            <div class="keywords-grid">
+                <span class="tag"># Epigenome Editing</span>
+                <span class="tag"># Transcriptional Bursting</span>
+                <span class="tag"># Spatial Omics</span>
+                <span class="tag"># Live Imaging</span>
+                <span class="tag"># Genomic Imprinting</span>
+            </div>
+        </section>
+
+        <section id="career">
+            <h2>Career</h2>
+            
+            <h3>Professional Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item current">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026.01 - Present</div>
+                    <div class="timeline-content">Associate Professor, Department of Genome Medicine, Dokkyo Medical University</div>
+                </div>
+                <div class="timeline-item current">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024.10 - Present</div>
+                    <div class="timeline-content">PRESTO Researcher, Japan Science and Technology Agency (JST) (Concurrent)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023.03 - 2025.12</div>
+                    <div class="timeline-content">Assistant Professor, High-Depth Omics Science Center, Medical Institute of Bioregulation, Kyushu University</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2020.05 - 2023.02</div>
+                    <div class="timeline-content">Researcher, Graduate School of Integrated Sciences for Life, Hiroshima University</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2020.04</div>
+                    <div class="timeline-content">Research Fellow, Medical Institute of Bioregulation, Kyushu University</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2014.04 - 2016.03</div>
+                    <div class="timeline-content">JSPS Research Fellow (DC2)</div>
+                </div>
+            </div>
+
+            <h3>Education</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2012.04 - 2020.03</div>
+                    <div class="timeline-content">Ph.D. in Medical Science, Graduate School of Medical Sciences, Kyushu University</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2006.04 - 2012.03</div>
+                    <div class="timeline-content">B.S. in Pharmacy, Faculty of Pharmaceutical Sciences, Fukuoka University</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grants">
+            <h2>Grants</h2>
+            
+            <h3 style="margin-top: 0; margin-bottom: 20px; border: none;">Active</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <span class="badge">JST PRESTO</span>
+                    <div class="card-title">Ultra-fine transcriptional manipulation via spatiotemporal epigenome intersection</div>
+                    <div class="card-meta">
+                        <div>JST Strategic Basic Research Programs (PRESTO) "Cell Control"</div>
+                        <div>2024.10 - 2028.03 | PI: Hiroaki Ohishi</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="badge">KAKENHI (B)</span>
+                    <div class="card-title">Development of simultaneous visualization technology for epigenome and higher-order genome structure to realize spatiotemporal live omics</div>
+                    <div class="card-meta">
+                        <div>JSPS Grant-in-Aid for Scientific Research (B)</div>
+                        <div>2025.04 - 2028.03 | PI: Hiroaki Ohishi</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="badge">Nakatani Foundation</span>
+                    <div class="card-title">Development of transcriptional manipulation methods targeting characteristic changes caused by crossed epigenomes</div>
+                    <div class="card-meta">
+                        <div>Nakatani Foundation for Advancement of Measuring Technologies in Biomedical Engineering</div>
+                        <div>2025.04 - 2027.03 | PI: Hiroaki Ohishi</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="badge">Astellas</span>
+                    <div class="card-title">Transcriptional manipulation targeting environmental fields via epigenome intersection</div>
+                    <div class="card-meta">
+                        <div>Astellas Foundation for Research on Metabolic Disorders</div>
+                        <div>2025.01 - 2026.12 | PI: Hiroaki Ohishi</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="badge">Nakajima Foundation</span>
+                    <div class="card-title">Elucidation of oocyte epigenome formation mechanisms using high-definition chromatin tracing combining expansion microscopy and super-resolution microscopy</div>
+                    <div class="card-meta">
+                        <div>The Nakajima Foundation</div>
+                        <div>2024.04 - 2025.03 | PI: Hiroaki Ohishi</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Completed</h3>
+            <div class="grid-cards">
+                <div class="card">
+                    <span class="badge ended">KAKENHI (Early-Career)</span>
+                    <div class="card-title">Elucidation of spatiotemporal genomic imprinting regulatory mechanisms via fluorescence imaging</div>
+                    <div class="card-meta">JSPS Grant-in-Aid for Early-Career Scientists | 2022 - 2025</div>
+                </div>
+                <div class="card">
+                    <span class="badge ended">JSPS DC2</span>
+                    <div class="card-title">Elucidation of maintenance and transmission mechanisms of epigenetic modifications by novel KRAB-ZNF proteins</div>
+                    <div class="card-meta">JSPS Research Fellow | 2014 - 2016</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <h3 style="margin-top: 0;">Selected Original Articles</h3>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <div class="pub-title">Transcription-coupled changes in genomic region proximities during transcriptional bursting</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Soya Shinkai, Hitoshi Owada, Takeru Fujii, Kazufumi Hosoda, Shuichi Onami, Takashi Yamamoto, Yasuyuki Ohkawa, Hiroshi Ochiai</div>
+                    <div class="pub-journal">Science Advances, (2024 Dec 6)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Anti-phase clustering of regulatory factors shapes gene transcription burst</div>
+                    <div class="pub-authors">Bitong Li, Yew Yan Wong, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroshi Ochiai, Mathias Francois</div>
+                    <div class="pub-journal">bioRxiv, (2024 Sep)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Precise immunofluorescence canceling for highly multiplexed imaging to capture specific cell states</div>
+                    <div class="pub-authors">Kosuke Tomimatsu, Takeru Fujii, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroshi Ochiai</div>
+                    <div class="pub-journal">Nature Communications, (2024 May)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Combined and differential roles of ADD domains of DNMT3A and DNMT3L on DNA methylation landscapes in mouse germ cells</div>
+                    <div class="pub-authors">Naoki Kubo, Ryuji Uehara, Shuhei Uemura, <strong>Hiroaki Ohishi</strong>, Kenjiro Shirane, Hiroyuki Sasaki</div>
+                    <div class="pub-journal">Nature Communications, 15(1) (2024 Apr)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">The DNMT3A ADD domain is required for efficient de novo DNA methylation and maternal imprinting in mouse oocytes</div>
+                    <div class="pub-authors">Ryuji Uehara, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
+                    <div class="pub-journal">PLOS Genetics, 19(8) (2023 Aug)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">STREAMING-tag system reveals spatiotemporal relationships between transcriptional regulatory factors and transcriptional activity</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Seiru Shimada, Satoshi Uchino, ..., Hiroshi Ochiai</div>
+                    <div class="pub-journal">Nature Communications, (2022 Dec)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">The DNMT3A PWWP domain is essential for the normal DNA methylation landscape in mouse somatic cells and oocytes</div>
+                    <div class="pub-authors">Kanako Kibe, Kenjiro Shirane, <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
+                    <div class="pub-journal">PLoS Genetics, 17(5) (2021 May)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Characterization of genetic-origin-dependent monoallelic expression in mouse embryonic stem cells</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Wan Kin Au Yeung, ..., Hiroyuki Sasaki</div>
+                    <div class="pub-journal">Genes to cells, 25(1) 54-64 (2020 Jan)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Zfp281 Shapes the Transcriptome of Trophoblast Stem Cells and Is Essential for Placental Development</div>
+                    <div class="pub-authors">Takashi Ishiuchi, <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
+                    <div class="pub-journal">Cell Reports, 27(6) (2019 May)</div>
+                </div>
+            </div>
+
+            <h3>Reviews, Books, & Protocols</h3>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <div class="pub-title">Recent advances in methodologies of epigenomics</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Wan Kin Au Yeung</div>
+                    <div class="pub-journal">Epigenomics, 1-19 (2025 Nov)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Measurement of Spatial Contact Map Using Sequential FISH</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong></div>
+                    <div class="pub-journal">Methods in Molecular Biology, 2958:327-341 (2025)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Image Analysis Protocol for DNA/RNA/Immunofluorescence (IF)-seqFISH Data</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Hiroshi Ochiai</div>
+                    <div class="pub-journal">Methods in Molecular Biology, 2856:419-432 (2025)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">Organization of transcription and 3D genome as revealed by live-cell imaging</div>
+                    <div class="pub-authors">Hiroshi Ochiai, <strong>Hiroaki Ohishi</strong>, Yuko Sato, Hiroshi Kimura</div>
+                    <div class="pub-journal">Current Opinion in Structural Biology, 81 (2023 May)</div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-title">STREAMING-Tag System: Technology to Enable Visualization of Transcriptional Activity and Subnuclear Localization of Specific Endogenous Genes</div>
+                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Hiroshi Ochiai</div>
+                    <div class="pub-journal">Methods in Molecular Biology, 2577:103-122 (2023)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards</h2>
+            <div class="list-row">
+                <div class="list-date">2023.06</div>
+                <div>Young Scientist Award (Japan Society for Cell Biology)</div>
+            </div>
+            <div class="list-row">
+                <div class="list-date">2022.06</div>
+                <div>Excellent Researcher Poster Award (Japanese Society for Genome Editing)</div>
+            </div>
+            <div class="list-row">
+                <div class="list-date">2014.07</div>
+                <div>Best Poster Award (The 17th Medical Institute of Bioregulation Retreat 2014)</div>
+            </div>
+        </section>
+
+        <section id="activities">
+            <h2>Professional Activities</h2>
+            
+            <h3>Memberships</h3>
+            <div class="society-chips">
+                <div class="society-chip">The Japanese Society for Epigenetics</div>
+                <div class="society-chip">Japan Society for Cell Biology</div>
+                <div class="society-chip">Japanese Society for Genome Editing</div>
+                <div class="society-chip">The Molecular Biology Society of Japan</div>
+            </div>
+
+            <h3>Service</h3>
+            <div class="list-row">
+                <div class="list-date">2025.12</div>
+                <div>Judge, MBSJ Poster Award 2025 (The 48th Annual Meeting of the Molecular Biology Society of Japan)</div>
+            </div>
+            <div class="list-row">
+                <div class="list-date">2025.07</div>
+                <div>Session Chair / Oral Presentation Judge (The 77th Annual Meeting of the Japan Society for Cell Biology)</div>
+            </div>
+            <div class="list-row">
+                <div class="list-date">2024.07</div>
+                <div>Student Poster Award Judge (The 76th Annual Meeting of the Japan Society for Cell Biology)</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Hiroaki Ohishi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
