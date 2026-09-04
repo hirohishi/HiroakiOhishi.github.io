@@ -1,771 +1,298 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y7SVEYB4Y"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大石 裕晃 | Hiroaki Ohishi, Ph.D.</title>
+<meta name="description" content="獨協医科大学 ゲノム医科学 准教授。蛍光イメージングを基盤に、エピゲノム編集・ゲノムインプリンティング・高次ゲノム構造による転写制御を研究しています。">
+<link rel="canonical" href="https://hirohishi.github.io/HiroakiOhishi.github.io/index.html">
+<link rel="alternate" hreflang="ja" href="https://hirohishi.github.io/HiroakiOhishi.github.io/index.html">
+<link rel="alternate" hreflang="en" href="https://hirohishi.github.io/HiroakiOhishi.github.io/en.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="大石 裕晃 | Hiroaki Ohishi, Ph.D.">
+<meta property="og:description" content="獨協医科大学 ゲノム医科学 准教授。蛍光イメージングを基盤に、エピゲノム編集・ゲノムインプリンティング・高次ゲノム構造による転写制御を研究しています。">
+<meta property="og:image" content="https://hirohishi.github.io/HiroakiOhishi.github.io/images/imaginghero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --w:#ffffff; --k:#000000; --g:#37d95a;
+  --lat:"Manrope",system-ui,sans-serif;
+  --jp:"Zen Kaku Gothic New","Manrope",sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--jp);color:var(--k);background:var(--w);line-height:1.7;font-size:16px;font-feature-settings:"palt"}
+:lang(en) body,body:lang(en){font-family:var(--lat)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.lat{font-family:var(--lat)}
+section,header{padding:clamp(88px,12vw,160px) var(--pad)}
+.dark{background:var(--k);color:var(--w)}
+.light{background:var(--w);color:var(--k)}
+.wrap{max-width:1440px;margin:0 auto}
 
-      gtag('config', 'G-3Y7SVEYB4Y');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大石 裕晃 | Hiroaki Ohishi, Ph.D.</title>
-    <meta name="description" content="獨協医科大学 ゲノム医科学 准教授。蛍光イメージングを基盤に、エピゲノム編集・ゲノムインプリンティング・高次ゲノム構造による転写制御を研究しています。">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="大石 裕晃 | Hiroaki Ohishi, Ph.D.">
-    <meta property="og:description" content="獨協医科大学 ゲノム医科学 准教授。蛍光イメージングを基盤に、エピゲノム編集・ゲノムインプリンティング・高次ゲノム構造による転写制御を研究しています。">
-    <meta property="og:image" content="https://hirohishi.github.io/HiroakiOhishi.github.io/images/imaginghero.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://hirohishi.github.io/HiroakiOhishi.github.io/index.html">
-    <link rel="alternate" hreflang="en" href="https://hirohishi.github.io/HiroakiOhishi.github.io/en.html">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --ink: #14161a;
-            --ink-2: #4c525a;
-            --ink-3: #8b9199;
-            --line: #e4e6e9;
-            --line-2: #f0f1f3;
-            --bg: #ffffff;
-            --bg-alt: #f6f6f7;
-            --max: 1120px;
-            --gutter: clamp(22px, 5vw, 60px);
-            --head-h: 72px;
-            --ease: cubic-bezier(.22,.68,.28,1);
-        }
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pad);color:#fff;mix-blend-mode:difference;font-family:var(--lat);font-weight:600;font-size:14px;letter-spacing:.01em}
+nav .brand{font-weight:800;font-size:16px}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{opacity:.85}nav ul a:hover{opacity:1}
+nav .lang a{opacity:.5}nav .lang a[aria-current]{opacity:1}
+nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cursor:pointer}
+@media(max-width:900px){
+  nav ul{display:none}
+  nav .burger{display:block}
+  nav.open ul{display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px;padding:var(--pad);background:#fff;color:#000;mix-blend-mode:normal;font-size:clamp(32px,8vw,48px);font-weight:800}
+  nav.open{mix-blend-mode:normal;color:#000}
+  nav.open .lang,nav.open .brand,nav.open .burger{position:relative;z-index:2}
+}
 
-        *, *::before, *::after { box-sizing: border-box; }
-        html {
-            -webkit-text-size-adjust: 100%;
-            scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--head-h) + 16px);
-        }
-        body {
-            margin: 0;
-            font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
-            font-size: 15px;
-            line-height: 1.95;
-            letter-spacing: .025em;
-            color: var(--ink);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        img { display: block; max-width: 100%; }
-        a { color: inherit; text-decoration: none; transition: opacity .3s var(--ease), color .3s var(--ease); }
-        p { margin: 0 0 1.6em; }
-        p:last-child { margin-bottom: 0; }
-        h1, h2, h3 { margin: 0; font-weight: 500; }
-        ::selection { background: var(--ink); color: #fff; }
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;padding-top:0;padding-bottom:clamp(40px,6vw,80px);overflow:hidden}
+.hero .img{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero .img img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.08);animation:zoom 2.4s cubic-bezier(.2,.8,.2,1) forwards}
+.hero .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.05) 40%,rgba(0,0,0,.9) 100%)}
+.hero .body{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}
+.hero h1{font-size:clamp(56px,13vw,200px);line-height:.95;font-weight:900;letter-spacing:-.03em;overflow:hidden}
+.hero h1 span{display:block;transform:translateY(110%);animation:rise 1.1s .3s cubic-bezier(.2,.8,.2,1) forwards}
+.hero .sub{font-family:var(--lat);font-weight:700;font-size:clamp(18px,2.4vw,34px);letter-spacing:-.01em;margin-top:12px;opacity:0;animation:fade .9s 1s forwards}
+.hero .aff{margin-top:20px;font-size:clamp(14px,1.3vw,18px);opacity:0;animation:fade .9s 1.15s forwards}
+.hero .aff small{display:block;opacity:.6;margin-top:6px}
+.hero .links{display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--lat);font-weight:600;font-size:14px;opacity:0;animation:fade .9s 1.3s forwards}
+.hero .links a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+.hero .links a:hover{border-color:#fff}
+@keyframes zoom{to{transform:scale(1)}}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fade{to{opacity:1}}
+@media(max-width:900px){.hero .body{grid-template-columns:1fr}}
 
-        .wrap { width: min(100% - var(--gutter) * 2, var(--max)); margin-inline: auto; }
-        .en { font-family: 'Inter', sans-serif; }
+/* section heading */
+.head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,88px)}
+.head h2{font-size:clamp(44px,8vw,120px);line-height:1;font-weight:900;letter-spacing:-.03em}
+.head .en{font-family:var(--lat);font-weight:500;font-size:clamp(14px,1.4vw,20px);opacity:.5}
+:lang(en) .head h2{font-family:var(--lat);font-weight:800;letter-spacing:-.04em}
 
-        /* ---------- Header ---------- */
-        .site-header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 90;
-            transition: background .45s var(--ease), box-shadow .45s var(--ease);
-        }
-        .site-header::after {
-            content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
-            background: transparent; transition: background .45s var(--ease);
-        }
-        .site-header.is-solid { background: rgba(255,255,255,.9); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); }
-        .site-header.is-solid::after { background: var(--line); }
-        .header-inner { display: flex; align-items: center; gap: 20px; height: var(--head-h); }
-        .brand {
-            font-size: .92rem; letter-spacing: .18em; font-weight: 500; white-space: nowrap;
-            color: var(--ink); opacity: 0; transform: translateY(6px);
-            transition: opacity .45s var(--ease), transform .45s var(--ease);
-            pointer-events: none;
-        }
-        .site-header.is-solid .brand { opacity: 1; transform: none; pointer-events: auto; }
+/* research */
+.two{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,120px)}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.statement{font-size:clamp(20px,2.2vw,30px);line-height:1.6;font-weight:500;letter-spacing:-.01em}
+.statement+.statement{margin-top:1.4em}
+.body-txt{font-size:clamp(15px,1.15vw,17px);line-height:1.9;opacity:.75;margin-top:2.4em;max-width:62ch}
+.kw{margin-top:clamp(40px,5vw,72px);display:flex;flex-wrap:wrap;gap:0 .5em;font-family:var(--lat);font-weight:700;font-size:clamp(18px,2.6vw,40px);letter-spacing:-.02em;line-height:1.3}
+.kw span+span::before{content:"/";opacity:.25;margin-right:.5em;font-weight:400}
+:lang(ja) .kw{font-family:var(--jp)}
 
-        .nav { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 30px); margin-left: auto; overflow-x: auto; scrollbar-width: none; }
-        .nav::-webkit-scrollbar { display: none; }
-        .nav a {
-            font-size: .74rem; letter-spacing: .12em; white-space: nowrap;
-            color: rgba(255,255,255,.78); padding: 6px 0; position: relative;
-        }
-        .nav a::after {
-            content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
-            background: currentColor; transform: scaleX(0); transform-origin: left;
-            transition: transform .4s var(--ease);
-        }
-        .nav a:hover::after { transform: scaleX(1); }
-        .site-header.is-solid .nav a { color: var(--ink-2); }
-        .site-header.is-solid .nav a:hover { color: var(--ink); }
+/* recruit */
+.recruit{position:relative;padding:0;min-height:70vh;display:grid;align-items:center;overflow:hidden}
+.recruit img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+.recruit .body{position:relative;padding:clamp(88px,12vw,160px) var(--pad);background:linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.2))}
+.recruit .tag{color:var(--g);font-family:var(--lat);font-weight:800;font-size:14px;letter-spacing:.06em}
+.recruit h2{font-size:clamp(30px,4.5vw,64px);line-height:1.15;font-weight:900;letter-spacing:-.02em;margin:18px 0 20px;max-width:22ch}
+.recruit p{opacity:.8;max-width:60ch}
+.btn{display:inline-block;margin-top:36px;background:var(--g);color:#000;font-family:var(--lat);font-weight:800;font-size:15px;padding:16px 28px;border-radius:999px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
 
-        .lang { display: flex; align-items: center; gap: 4px; margin-left: clamp(12px, 2vw, 26px); font-size: .7rem; letter-spacing: .12em; }
-        .lang a { color: rgba(255,255,255,.55); padding: 4px 6px; }
-        .lang a.active { color: #fff; font-weight: 600; }
-        .lang span { color: rgba(255,255,255,.3); }
-        .site-header.is-solid .lang a { color: var(--ink-3); }
-        .site-header.is-solid .lang a.active { color: var(--ink); }
-        .site-header.is-solid .lang span { color: var(--line); }
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px)}
+@media(max-width:900px){.team{grid-template-columns:1fr}}
+.member{border-top:2px solid currentColor;padding-top:20px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+.member .role{font-family:var(--lat);font-weight:600;font-size:13px;letter-spacing:.04em;opacity:.55}
+.member h3{font-size:clamp(28px,3vw,44px);line-height:1.1;font-weight:900;letter-spacing:-.02em;margin-top:60px}
+.member .en{font-family:var(--lat);font-weight:600;font-size:15px;opacity:.6;margin-top:6px}
+.member p{margin-top:18px;font-size:15px;opacity:.75}
+.member.staff h3{opacity:.35}
+.team-note{margin-top:clamp(40px,5vw,72px);font-size:clamp(17px,1.6vw,22px);font-weight:500}
+.team-note a{border-bottom:2px solid currentColor}
 
-        /* ---------- Hero ---------- */
-        .hero {
-            position: relative; min-height: 100svh; min-height: 100vh;
-            display: flex; align-items: flex-end; overflow: hidden;
-            background: #05070a; color: #fff;
-        }
-        .hero-media { position: absolute; inset: 0; }
-        .hero-media img {
-            width: 100%; height: 100%; object-fit: cover;
-            filter: saturate(1.22) contrast(1.04);
-            transform: scale(1.04); animation: heroIn 2.4s var(--ease) forwards;
-        }
-        @keyframes heroIn { to { transform: scale(1); } }
-        .hero::before {
-            content: ''; position: absolute; inset: 0; z-index: 1;
-            background:
-                linear-gradient(to top, rgba(5,7,10,.86) 0%, rgba(5,7,10,.62) 24%, rgba(5,7,10,.28) 50%, rgba(5,7,10,.02) 74%, rgba(5,7,10,0) 100%),
-                linear-gradient(to bottom, rgba(5,7,10,.48) 0%, rgba(5,7,10,0) 17%);
-        }
-        .hero-inner { position: relative; z-index: 2; padding-block: 140px clamp(84px, 14vh, 150px); text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 6px 26px rgba(0,0,0,.8); }
-        .hero-label { font-size: .64rem; letter-spacing: .38em; color: rgba(255,255,255,.78); margin-bottom: clamp(18px, 3vw, 28px); }
-        .hero h1 { font-size: clamp(2.5rem, 7.4vw, 4.5rem); letter-spacing: .14em; line-height: 1.22; font-weight: 500; }
-        .hero-en { margin-top: 16px; font-size: clamp(.9rem, 1.7vw, 1.1rem); letter-spacing: .2em; color: rgba(255,255,255,.88); }
-        .hero-meta { margin-top: clamp(28px, 4vw, 40px); display: grid; gap: 4px; font-size: .84rem; letter-spacing: .07em; color: rgba(255,255,255,.93); line-height: 1.9; }
-        .hero-meta span { color: rgba(255,255,255,.72); }
-        .hero-links { margin-top: clamp(30px, 4vw, 44px); display: flex; flex-wrap: wrap; gap: 9px; }
-        .hero-links a {
-            display: inline-flex; align-items: center; gap: 7px;
-            border: 1px solid rgba(255,255,255,.32); border-radius: 999px;
-            padding: 8px 17px; font-size: .72rem; letter-spacing: .12em; color: rgba(255,255,255,.88);
-            transition: background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease);
-        }
-        .hero-links a:hover { background: #fff; border-color: #fff; color: var(--ink); }
-        .scroll-cue { position: absolute; z-index: 2; bottom: 0; left: 50%; transform: translateX(-50%); display: grid; justify-items: center; gap: 12px; }
-        .scroll-cue span { font-size: .58rem; letter-spacing: .34em; color: rgba(255,255,255,.5); }
-        .scroll-cue i { display: block; width: 1px; height: 62px; background: rgba(255,255,255,.25); position: relative; overflow: hidden; }
-        .scroll-cue i::after { content: ''; position: absolute; inset: 0; background: #fff; animation: cue 2.4s var(--ease) infinite; }
-        @keyframes cue { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
+/* facilities */
+.fac{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,56px)}
+@media(max-width:900px){.fac{grid-template-columns:1fr}}
+.fac figure img{width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.fac figcaption{margin-top:28px}
+.fac .cat{font-family:var(--lat);font-weight:600;font-size:13px;letter-spacing:.04em;opacity:.5}
+.fac h3{font-size:clamp(24px,2.2vw,32px);font-weight:900;line-height:1.2;margin-top:8px;letter-spacing:-.01em}
+.fac .model{font-family:var(--lat);font-weight:600;opacity:.7;margin-top:4px}
+.fac p{margin-top:12px;font-size:15px;opacity:.7}
 
-        /* ---------- Sections ---------- */
-        .section { padding-block: clamp(80px, 11vw, 150px); }
-        .section--alt { background: var(--bg-alt); }
-        .sec-head { margin-bottom: clamp(38px, 6vw, 68px); }
-        .sec-label { display: flex; align-items: center; gap: 14px; font-size: .64rem; letter-spacing: .3em; color: var(--ink-3); }
-        .sec-label i { display: block; width: 26px; height: 1px; background: var(--ink-3); opacity: .6; }
-        .sec-title { font-size: clamp(1.55rem, 3.4vw, 2.25rem); letter-spacing: .11em; margin-top: 16px; line-height: 1.4; }
-        .lead { font-size: clamp(.98rem, 1.4vw, 1.08rem); line-height: 2.2; color: var(--ink-2); letter-spacing: .045em; }
+/* career / lists */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,120px)}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.cols h3,.grp h3{font-family:var(--lat);font-weight:700;font-size:14px;letter-spacing:.04em;opacity:.55;margin-bottom:28px}
+.tl{list-style:none}
+.tl li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-top:1px solid currentColor}
+.tl li:last-child{border-bottom:1px solid currentColor}
+.tl time{font-family:var(--lat);font-weight:600;font-size:14px;opacity:.6;padding-top:3px}
+.tl .t{font-size:clamp(16px,1.3vw,19px);font-weight:500;line-height:1.5}
+.tl .t small{display:block;font-size:14px;opacity:.6;font-weight:400;margin-top:4px}
+@media(max-width:600px){.tl li{grid-template-columns:1fr;gap:4px}}
+.dark .tl li{border-color:rgba(255,255,255,.25)}
+.light .tl li{border-color:rgba(0,0,0,.2)}
 
-        /* ---------- About ---------- */
-        .about-grid { display: grid; grid-template-columns: 1.4fr .85fr; gap: clamp(34px, 6vw, 78px); align-items: start; }
-        .figure { border: 1px solid var(--line); background: #000; overflow: hidden; cursor: zoom-in; }
-        .figure img { width: 100%; transition: transform .7s var(--ease); }
-        .figure:hover img { transform: scale(1.03); }
-        .kw { display: flex; flex-wrap: wrap; gap: 9px; margin-top: clamp(34px, 5vw, 52px); }
-        .kw span { font-size: .74rem; letter-spacing: .1em; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 15px; background: #fff; }
+/* grants */
+.grants{list-style:none}
+.grants li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:32px 0;border-top:1px solid rgba(255,255,255,.25);align-items:start}
+.grants li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
+.grants .prog{font-family:var(--lat);font-weight:800;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.01em;line-height:1.2}
+.grants .prog small{display:block;font-weight:500;font-size:13px;opacity:.55;margin-top:6px;letter-spacing:0}
+.grants .title{font-size:clamp(17px,1.6vw,24px);font-weight:700;line-height:1.45;letter-spacing:-.01em}
+.grants .title small{display:block;font-size:14px;font-weight:400;opacity:.6;margin-top:8px}
+.grants .when{font-family:var(--lat);font-weight:600;font-size:14px;opacity:.6;text-align:right;line-height:1.5}
+.grants .when i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--g);margin-right:8px;vertical-align:middle}
+.grp+.grp{margin-top:clamp(56px,7vw,110px)}
+.grants.done .title{font-size:clamp(15px,1.2vw,18px);font-weight:500;opacity:.8}
+.grants.done .prog{font-size:16px;opacity:.7}
+.grants.done li{padding:20px 0}
+@media(max-width:900px){.grants li{grid-template-columns:1fr;gap:8px}.grants .when{text-align:left}}
 
-        /* ---------- Recruit band ---------- */
-        .recruit { background: var(--ink); color: #fff; }
-        .recruit-inner { padding-block: clamp(58px, 8vw, 96px); display: flex; align-items: center; justify-content: space-between; gap: clamp(28px, 4vw, 56px); flex-wrap: wrap; }
-        .recruit-label { font-size: .62rem; letter-spacing: .34em; color: rgba(255,255,255,.55); }
-        .recruit h2 { font-size: clamp(1.25rem, 2.5vw, 1.7rem); letter-spacing: .09em; line-height: 1.6; margin-top: 18px; font-weight: 500; }
-        .recruit p { font-size: .82rem; letter-spacing: .07em; color: rgba(255,255,255,.62); margin: 14px 0 0; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 12px; white-space: nowrap;
-            border: 1px solid rgba(255,255,255,.4); border-radius: 999px;
-            padding: 15px 30px; font-size: .78rem; letter-spacing: .14em; color: #fff;
-            transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
-        }
-        .btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
-        .btn i { display: block; width: 20px; height: 1px; background: currentColor; transition: width .35s var(--ease); }
-        .btn:hover i { width: 30px; }
+/* publications */
+.pubs{list-style:none;counter-reset:p}
+.pubs li{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:26px 0;border-top:1px solid rgba(0,0,0,.2)}
+.pubs li:last-child{border-bottom:1px solid rgba(0,0,0,.2)}
+.pubs .yr{font-family:var(--lat);font-weight:800;font-size:clamp(20px,2vw,28px);letter-spacing:-.02em;line-height:1.2}
+.pubs .ti{font-family:var(--lat);font-size:clamp(17px,1.5vw,22px);font-weight:700;letter-spacing:-.015em;line-height:1.4}
+:lang(ja) .pubs .ti.jp{font-family:var(--jp)}
+.pubs .au{font-family:var(--lat);font-size:14px;opacity:.65;margin-top:8px;line-height:1.6}
+.pubs .au b{font-weight:800;color:#000;opacity:1}
+.pubs .jn{font-family:var(--lat);font-size:14px;font-weight:600;margin-top:6px}
+.pubs .jn em{font-style:italic}
+@media(max-width:600px){.pubs li{grid-template-columns:1fr;gap:6px}}
 
-        /* ---------- Equipment ---------- */
-        .equip { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(18px, 2.6vw, 34px); }
-        .equip-media {
-            --pad: clamp(22px, 3.4vw, 44px);
-            position: relative; aspect-ratio: 1 / 1; border: 1px solid var(--line);
-            background: linear-gradient(165deg, #eff0f2 0%, #fbfbfc 55%, #f1f2f4 100%);
-            cursor: zoom-in; overflow: hidden;
-        }
-        .equip-media img {
-            position: absolute; left: var(--pad); top: var(--pad);
-            width: calc(100% - var(--pad) * 2); height: calc(100% - var(--pad) * 2);
-            object-fit: contain; filter: drop-shadow(0 20px 28px rgba(20,22,26,.13));
-            transition: transform .7s var(--ease);
-        }
-        .equip-item:hover .equip-media img { transform: translateY(-7px) scale(1.03); }
-        .equip-en { font-size: .6rem; letter-spacing: .26em; color: var(--ink-3); margin-top: 22px; }
-        .equip-name { font-size: 1rem; letter-spacing: .09em; margin-top: 9px; font-weight: 500; }
-        .equip-model { font-size: .72rem; letter-spacing: .06em; color: var(--ink-3); margin-top: 4px; }
-        .equip-desc { font-size: .82rem; line-height: 1.95; color: var(--ink-2); margin-top: 12px; }
+/* awards & activities */
+.mem{list-style:none;font-size:clamp(18px,1.8vw,26px);font-weight:700;letter-spacing:-.01em;line-height:1.35}
+.mem li{padding:16px 0;border-top:1px solid rgba(255,255,255,.25)}
+.mem li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
 
-        /* ---------- Sub headings ---------- */
-        .section h3 {
-            font-size: .74rem; letter-spacing: .2em; color: var(--ink-3); font-weight: 500;
-            margin: clamp(46px, 6vw, 74px) 0 22px; padding-bottom: 14px; border-bottom: 1px solid var(--line);
-        }
-        .section h3:first-of-type { margin-top: 0; }
+footer{background:var(--k);color:var(--w);padding:40px var(--pad) 48px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--lat);font-size:13px;opacity:.6}
+footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 
-        /* ---------- Timeline / lists ---------- */
-        .timeline { border-top: 1px solid var(--line); }
-        .timeline-item { display: grid; grid-template-columns: 200px 1fr; gap: clamp(14px, 2vw, 28px); padding: 20px 0; border-bottom: 1px solid var(--line); }
-        .timeline-dot { display: none; }
-        .timeline-date { font-family: 'Inter', sans-serif; font-size: .78rem; letter-spacing: .07em; color: var(--ink-3); }
-        .timeline-content { font-size: .93rem; letter-spacing: .04em; line-height: 1.85; }
-        .timeline-item.current .timeline-date { color: var(--ink); }
-        .timeline-item.current .timeline-content { font-weight: 500; }
-
-        .list-row { display: grid; grid-template-columns: 200px 1fr; gap: clamp(14px, 2vw, 28px); padding: 20px 0; border-bottom: 1px solid var(--line); font-size: .93rem; letter-spacing: .04em; line-height: 1.85; }
-        .list-row:first-of-type { border-top: 1px solid var(--line); }
-        .list-date { font-family: 'Inter', sans-serif; font-size: .78rem; letter-spacing: .07em; color: var(--ink-3); }
-
-        .society-chips { display: flex; flex-wrap: wrap; gap: 9px; }
-        .society-chip { font-size: .76rem; letter-spacing: .08em; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; }
-
-        /* ---------- Grants ---------- */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(14px, 1.8vw, 20px); }
-        .card { border: 1px solid var(--line); background: #fff; padding: clamp(22px, 2.6vw, 30px); transition: border-color .4s var(--ease); }
-        .card:hover { border-color: var(--ink-3); }
-        .badge { display: inline-block; font-size: .64rem; letter-spacing: .14em; border: 1px solid var(--ink); border-radius: 999px; padding: 4px 12px; margin-bottom: 16px; line-height: 1.7; }
-        .badge.ended { border-color: var(--line); color: var(--ink-3); }
-        .card-title { font-size: .94rem; font-weight: 500; letter-spacing: .04em; line-height: 1.8; }
-        .card-meta { margin-top: 14px; font-size: .78rem; color: var(--ink-3); line-height: 1.9; letter-spacing: .04em; }
-
-        /* ---------- Publications ---------- */
-        .pub-list { border-top: 1px solid var(--line); }
-        .pub-item { padding: 24px 0; border-bottom: 1px solid var(--line); }
-        .pub-title { font-size: .96rem; font-weight: 500; letter-spacing: .03em; line-height: 1.8; }
-        .pub-authors { font-size: .79rem; color: var(--ink-2); line-height: 1.85; margin-top: 8px; letter-spacing: .02em; }
-        .pub-journal { font-family: 'Inter', sans-serif; font-size: .78rem; color: var(--ink-3); margin-top: 6px; letter-spacing: .03em; }
-        .pub-item a { border-bottom: 1px solid var(--line); }
-        .pub-item a:hover { border-color: var(--ink); }
-
-        /* ---------- Footer ---------- */
-        footer { border-top: 1px solid var(--line); padding: 46px 0; text-align: center; font-size: .72rem; letter-spacing: .14em; color: var(--ink-3); }
-
-        /* ---------- Lightbox ---------- */
-        .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(10,12,15,.94); display: none; align-items: center; justify-content: center; padding: clamp(24px, 5vw, 60px); }
-        .lightbox.open { display: flex; }
-        .lightbox img { max-width: min(1000px, 100%); max-height: 84vh; object-fit: contain; }
-        .lightbox-close { position: absolute; top: 18px; right: 22px; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; color: #fff; font-size: 1.7rem; line-height: 1; opacity: .7; }
-        .lightbox-close:hover { opacity: 1; }
-        .lightbox-cap { display: none; }
-
-        /* ---------- Reveal ---------- */
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
-        .reveal.is-in { opacity: 1; transform: none; }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal { opacity: 1; transform: none; transition: none; }
-            .hero-media img { animation: none; transform: none; }
-            .scroll-cue i::after { animation: none; }
-        }
-
-        /* ---------- Latin page tuning ---------- */
-        html[lang="en"] .hero h1 { letter-spacing: .015em; font-weight: 500; }
-        html[lang="en"] .sec-title { letter-spacing: .03em; }
-        html[lang="en"] .recruit h2 { letter-spacing: .02em; }
-        html[lang="en"] .equip-name { letter-spacing: .03em; }
-        html[lang="en"] .brand { letter-spacing: .08em; }
-
-        /* ---------- Responsive ---------- */
-        @media (max-width: 900px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .about-figure { order: -1; }
-        }
-        @media (max-width: 760px) {
-            .nav {
-                -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 26px), transparent 100%);
-                mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 26px), transparent 100%);
-                padding-right: 12px;
-            }
-        }
-        @media (max-width: 680px) {
-            body { font-size: 14px; }
-            .timeline-item, .list-row { grid-template-columns: 1fr; gap: 4px; }
-            .timeline-date, .list-date { font-size: .72rem; }
-            .header-inner { height: 60px; }
-            :root { --head-h: 60px; }
-            .hero-inner { padding-block: 120px 92px; }
-            .recruit-inner { flex-direction: column; align-items: flex-start; }
-        }
-
-        @media print {
-            .site-header, .scroll-cue, .lightbox, .hero-links, .btn { display: none !important; }
-            .hero { min-height: auto; color: #000; background: #fff; }
-            .hero::before, .hero-media { display: none; }
-            .hero-label, .hero-en, .hero-meta, .hero-meta span { color: #000; }
-            .recruit { background: #fff; color: #000; }
-            .section { padding-block: 24px; }
-            .reveal { opacity: 1; transform: none; }
-            body { font-size: 11px; }
-        }
-    </style>
+.dark .head .en,.dark .member .role,.dark .fac .cat{opacity:.6}
+@media(prefers-reduced-motion:reduce){
+  .hero .img img,.hero h1 span,.hero .sub,.hero .aff,.hero .links{animation:none;transform:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
 <body>
+<nav aria-label="Main">
+  <a class="brand" href="#top">大石 裕晃</a>
+  <ul><li><a href="#about">研究</a></li><li><a href="#team">チーム</a></li><li><a href="#environment">研究環境</a></li><li><a href="#career">経歴</a></li><li><a href="#grants">研究資金</a></li><li><a href="#publications">論文</a></li><li><a href="#awards">受賞</a></li><li><a href="#activities">学会活動</a></li></ul>
+  <div class="lang"><a href="index.html" aria-current="page">JP</a> / <a href="en.html">EN</a></div>
+  <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+</nav>
 
-    <header class="site-header" id="siteHeader">
-        <div class="wrap header-inner">
-            <a href="#top" class="brand">大石 裕晃</a>
-            <nav class="nav">
-                    <a href="#about">研究概要</a>
-                    <a href="#environment">研究環境</a>
-                    <a href="#career">経歴</a>
-                    <a href="#grants">研究資金</a>
-                    <a href="#publications">論文</a>
-                    <a href="#awards">受賞</a>
-                    <a href="#activities">学会活動</a>
-            </nav>
-            <div class="lang en">
-                <a href="index.html" class="active">JP</a><span>/</span><a href="en.html" class="">EN</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero" id="top">
-        <div class="hero-media">
-            <img src="images/imaginghero.webp" alt="" fetchpriority="high" decoding="async">
-        </div>
-        <div class="wrap hero-inner">
-            <div class="hero-label en">DOKKYO MEDICAL UNIVERSITY &nbsp;/&nbsp; MEDICAL GENOME SCIENCE</div>
-            <h1>大石 裕晃</h1>
-            <div class="hero-en en">Hiroaki Ohishi, Ph.D.</div>
-            <div class="hero-meta">
-                    <div>獨協医科大学 ゲノム医科学 准教授</div>
-                    <div><span>専門分野</span>&nbsp; ライフサイエンス / ゲノム生物学</div>
-                    <div><span>学位</span>&nbsp; 博士（医学）（九州大学）</div>
-            </div>
-            <div class="hero-links">
-                    <a href="https://orcid.org/0000-0001-6672-4093" target="_blank" rel="noopener">
-                        <svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#14161a" d="M86.3 186.2H70.9V79.1h15.4v107.1zM78.6 51.7c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z"/><path fill="#14161a" d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z"/></svg>
-                        ORCID
-                    </a>
-                    <a href="https://researchmap.jp/R000003703" target="_blank" rel="noopener">researchmap</a>
-                    <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202001018320334180" target="_blank" rel="noopener">J-GLOBAL</a>
-                    <a href="https://x.com/HiroakiO53902" target="_blank" rel="noopener">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.857L1.255 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        X
-                    </a>
-                    <a href="mailto:hirohishi@outlook.jp">hirohishi&#64;outlook.jp</a>
-            </div>
-        </div>
-        <div class="scroll-cue"><span class="en">SCROLL</span><i></i></div>
-    </section>
-
-    <main>
-
-    <section class="section" id="about">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>01&nbsp;&nbsp;&nbsp;Research</div>
-                <h2 class="sec-title">研究概要</h2>
-            </div>
-            <div class="about-grid">
-                <div class="reveal">
-                    <div class="lead">
-                    <p>私たちの研究グループでは、最先端の蛍光イメージング技術を駆使し、時空間的な動態情報を基盤とした生命現象の解明に取り組んでいます。具体的には、エピゲノム編集技術の新規開発、ゲノムインプリンティングの制御機構、および高次ゲノム構造による転写制御メカニズムの解明を主要なテーマとしています。</p>
-                    <p>現在、当研究グループでは、私たちと共に「エピゲノム」と「イメージング」を融合させた独自の研究を展開してくれる博士課程大学院生および研究員（ポスドク）を広く募集しています。</p>
-                    <p>獨協医科大学は、豊かな自然に囲まれた静謐な環境にあり、研究活動に没頭できる素晴らしいロケーションです。また、充実した共通機器センターや医学部ならではの豊富なリソース、手厚い研究支援体制が整っており、キャリアを築く場として最適な環境を提供できます。独自の視点でサイエンスを切り拓きたい意欲のある方は、ぜひお気軽にご連絡ください。</p>
-                    </div>
-                    <div class="kw">
-                        <span>エピゲノム編集</span>
-                        <span>転写バースト</span>
-                        <span>空間オミクス</span>
-                        <span>ライブイメージング</span>
-                        <span>ゲノムインプリンティング</span>
-                    </div>
-                </div>
-                <div class="about-figure reveal">
-                    <div class="figure gallery-item">
-                        <img src="images/imagingfoci.webp" alt="" loading="lazy" decoding="async">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="recruit" id="recruit">
-        <div class="wrap recruit-inner reveal">
-            <div>
-                <div class="recruit-label en">NOW RECRUITING</div>
-                <h2>博士研究員（ポスドク）・大学院生を募集しています</h2>
-                <p>獨協医科大学 ゲノム医科学講座 ｜ 時空間エピゲノムイメージング・ライブオミクス</p>
-            </div>
-            <a class="btn" href="https://jrecin.jst.go.jp/seek/SeekJorDetail?id=D126070366" target="_blank" rel="noopener">公募要項を見る<i></i></a>
-        </div>
-    </section>
-
-    <section class="section section--alt" id="environment">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>02&nbsp;&nbsp;&nbsp;Facilities</div>
-                <h2 class="sec-title">研究環境</h2>
-            </div>
-            <div class="equip">
-                <div class="equip-item reveal">
-                    <div class="equip-media gallery-item">
-                        <img src="images/equipmicroscope.webp" alt="蛍光顕微鏡" loading="lazy" decoding="async">
-                    </div>
-                    <div class="equip-en en">Microscope</div>
-                    <div class="equip-name">蛍光顕微鏡</div>
-                    <div class="equip-model en">Leica THUNDER Imager</div>
-                    <p class="equip-desc">防振台上に設置した、ライブイメージング用の蛍光顕微鏡システム。</p>
-                </div>
-                <div class="equip-item reveal">
-                    <div class="equip-media gallery-item">
-                        <img src="images/equipelectroporator.webp" alt="エレクトロポレーター" loading="lazy" decoding="async">
-                    </div>
-                    <div class="equip-en en">Electroporator</div>
-                    <div class="equip-name">エレクトロポレーター</div>
-                    <div class="equip-model en">NEPA GENE NEPA21 Type II</div>
-                    <p class="equip-desc">培養細胞への遺伝子導入に使用しています。</p>
-                </div>
-                <div class="equip-item reveal">
-                    <div class="equip-media gallery-item">
-                        <img src="images/equipdispenser.webp" alt="自動分注機" loading="lazy" decoding="async">
-                    </div>
-                    <div class="equip-en en">Liquid Handler</div>
-                    <div class="equip-name">自動分注機</div>
-                    <div class="equip-model en">Hamilton Microlab Prep</div>
-                    <p class="equip-desc">分注操作を自動化し、実験のスループットと再現性を高めています。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="career">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>03&nbsp;&nbsp;&nbsp;Career</div>
-                <h2 class="sec-title">経歴</h2>
-            </div>
-            <div class="reveal">
-<h3>Professional Experience</h3>
-            <div class="timeline">
-                <div class="timeline-item current">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026.01 - Present</div>
-                    <div class="timeline-content">獨協医科大学 ゲノム医科学 学内准教授</div>
-                </div>
-                <div class="timeline-item current">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024.10 - Present</div>
-                    <div class="timeline-content">国立研究開発法人科学技術振興機構（JST） さきがけ研究者（兼任）</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023.03 - 2025.12</div>
-                    <div class="timeline-content">九州大学 生体防御医学研究所 高深度オミクスサイエンスセンター 助教</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2020.05 - 2023.02</div>
-                    <div class="timeline-content">広島大学 大学院統合生命科学研究科 研究員</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2020.04</div>
-                    <div class="timeline-content">九州大学 生体防御医学研究所 特別研究員</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2014.04 - 2016.03</div>
-                    <div class="timeline-content">日本学術振興会 特別研究員（DC2）</div>
-                </div>
-            </div>
-
-            <h3>Education</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2012.04 - 2020.03</div>
-                    <div class="timeline-content">九州大学大学院 医学系学府 医学専攻（博士課程）</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2006.04 - 2012.03</div>
-                    <div class="timeline-content">福岡大学 薬学部 薬学科</div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--alt" id="grants">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>04&nbsp;&nbsp;&nbsp;Grants</div>
-                <h2 class="sec-title">研究資金</h2>
-            </div>
-            <div class="reveal">
-<h3>現在進行中</h3>
-            <div class="grid-cards">
-                <div class="card">
-                    <span class="badge">さきがけ</span>
-                    <div class="card-title">空間交差型エピゲノムによる超微細な転写操作</div>
-                    <div class="card-meta">
-                        <div>JST 戦略的創造研究推進事業（さきがけ）「細胞操作」領域</div>
-                        <div>2024.10 - 2028.03 ｜ 代表：大石 裕晃</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="badge">基盤研究(B)</span>
-                    <div class="card-title">時空間ライブオミクスを実現するエピゲノムと高次ゲノム構造の同時可視化技術の開発</div>
-                    <div class="card-meta">
-                        <div>日本学術振興会 科学研究費助成事業</div>
-                        <div>2025.04 - 2028.03 ｜ 代表：大石 裕晃</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="badge">中谷財団</span>
-                    <div class="card-title">交差型エピゲノムによる特性変化を標的とした転写操作法の開発</div>
-                    <div class="card-meta">
-                        <div>（公財）中谷財団 奨励研究助成</div>
-                        <div>2025.04 - 2027.03 ｜ 代表：大石 裕晃</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="badge">アステラス</span>
-                    <div class="card-title">エピゲノム交差による環境場を標的とした転写操作</div>
-                    <div class="card-meta">
-                        <div>（公財）アステラス病態代謝研究会 研究助成金</div>
-                        <div>2025.01 - 2026.12 ｜ 代表：大石 裕晃</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="badge">中島財団</span>
-                    <div class="card-title">膨張顕微鏡法と超解像顕微鏡を組み合わせた高精細クロマチントレーシング技術による卵子エピゲノム形成機構の解明</div>
-                    <div class="card-meta">
-                        <div>（公財）中島記念国際交流財団 日本人若手研究者研究助成金</div>
-                        <div>2024.04 - 2025.03 ｜ 代表：大石 裕晃</div>
-                    </div>
-                </div>
-            </div>
-
-            <h3>終了した課題</h3>
-            <div class="grid-cards">
-                <div class="card">
-                    <span class="badge ended">若手研究</span>
-                    <div class="card-title">蛍光イメージングによる時空間的なゲノムインプリンティング制御機構の解明</div>
-                    <div class="card-meta">2022 - 2025</div>
-                </div>
-                <div class="card">
-                    <span class="badge ended">DC2</span>
-                    <div class="card-title">新規KRAB-ZNFタンパク質によるエピジェネティック修飾の維持伝達機構の解明</div>
-                    <div class="card-meta">特別研究員奨励費 ｜ 2014 - 2016</div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="publications">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>05&nbsp;&nbsp;&nbsp;Publications</div>
-                <h2 class="sec-title">論文</h2>
-            </div>
-            <div class="reveal">
-<h3>原著論文 (Selected)</h3>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <div class="pub-title">Transcription-coupled changes in genomic region proximities during transcriptional bursting</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Soya Shinkai, Hitoshi Owada, Takeru Fujii, Kazufumi Hosoda, Shuichi Onami, Takashi Yamamoto, Yasuyuki Ohkawa, Hiroshi Ochiai</div>
-                    <div class="pub-journal">Science Advances, (2024 Dec 6)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Anti-phase clustering of regulatory factors shapes gene transcription burst</div>
-                    <div class="pub-authors">Bitong Li, Yew Yan Wong, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroshi Ochiai, Mathias Francois</div>
-                    <div class="pub-journal">bioRxiv, (2024 Sep)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Precise immunofluorescence canceling for highly multiplexed imaging to capture specific cell states</div>
-                    <div class="pub-authors">Kosuke Tomimatsu, Takeru Fujii, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroshi Ochiai</div>
-                    <div class="pub-journal">Nature Communications, (2024 May)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Combined and differential roles of ADD domains of DNMT3A and DNMT3L on DNA methylation landscapes in mouse germ cells</div>
-                    <div class="pub-authors">Naoki Kubo, Ryuji Uehara, Shuhei Uemura, <strong>Hiroaki Ohishi</strong>, Kenjiro Shirane, Hiroyuki Sasaki</div>
-                    <div class="pub-journal">Nature Communications, 15(1) (2024 Apr)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">The DNMT3A ADD domain is required for efficient de novo DNA methylation and maternal imprinting in mouse oocytes</div>
-                    <div class="pub-authors">Ryuji Uehara, ..., <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
-                    <div class="pub-journal">PLOS Genetics, 19(8) (2023 Aug)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">STREAMING-tag system reveals spatiotemporal relationships between transcriptional regulatory factors and transcriptional activity</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Seiru Shimada, Satoshi Uchino, ..., Hiroshi Ochiai</div>
-                    <div class="pub-journal">Nature Communications, (2022 Dec)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">The DNMT3A PWWP domain is essential for the normal DNA methylation landscape in mouse somatic cells and oocytes</div>
-                    <div class="pub-authors">Kanako Kibe, Kenjiro Shirane, <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
-                    <div class="pub-journal">PLoS Genetics, 17(5) (2021 May)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Characterization of genetic-origin-dependent monoallelic expression in mouse embryonic stem cells</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Wan Kin Au Yeung, ..., Hiroyuki Sasaki</div>
-                    <div class="pub-journal">Genes to cells, 25(1) 54-64 (2020 Jan)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Zfp281 Shapes the Transcriptome of Trophoblast Stem Cells and Is Essential for Placental Development</div>
-                    <div class="pub-authors">Takashi Ishiuchi, <strong>Hiroaki Ohishi</strong>, ..., Hiroyuki Sasaki</div>
-                    <div class="pub-journal">Cell Reports, 27(6) (2019 May)</div>
-                </div>
-            </div>
-
-            <h3>総説・著書・プロトコル</h3>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <div class="pub-title">Recent advances in methodologies of epigenomics</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Wan Kin Au Yeung</div>
-                    <div class="pub-journal">Epigenomics, 1-19 (2025 Nov)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Measurement of Spatial Contact Map Using Sequential FISH</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong></div>
-                    <div class="pub-journal">Methods in Molecular Biology, 2958:327-341 (2025)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Image Analysis Protocol for DNA/RNA/Immunofluorescence (IF)-seqFISH Data</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Hiroshi Ochiai</div>
-                    <div class="pub-journal">Methods in Molecular Biology, 2856:419-432 (2025)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">Organization of transcription and 3D genome as revealed by live-cell imaging</div>
-                    <div class="pub-authors">Hiroshi Ochiai, <strong>Hiroaki Ohishi</strong>, Yuko Sato, Hiroshi Kimura</div>
-                    <div class="pub-journal">Current Opinion in Structural Biology, 81 (2023 May)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">STREAMING-Tag System: Technology to Enable Visualization of Transcriptional Activity and Subnuclear Localization of Specific Endogenous Genes</div>
-                    <div class="pub-authors"><strong>Hiroaki Ohishi</strong>, Hiroshi Ochiai</div>
-                    <div class="pub-journal">Methods in Molecular Biology, 2577:103-122 (2023)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">特定RNA分子／DNA領域のライブイメージング技術</div>
-                    <div class="pub-authors">大石 裕晃, 落合 博</div>
-                    <div class="pub-journal">生体の科学, 74(3) 260-265 (2023)</div>
-                </div>
-                <div class="pub-item">
-                    <div class="pub-title">イメージングによる空間配置情報を保持した1細胞トランスクリプトーム解析ーseqFISH＋（分担執筆）</div>
-                    <div class="pub-authors">大石 裕晃</div>
-                    <div class="pub-journal">羊土社 (2020)</div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--alt" id="awards">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>06&nbsp;&nbsp;&nbsp;Awards</div>
-                <h2 class="sec-title">受賞</h2>
-            </div>
-            <div class="reveal">
-<div class="list-row">
-                <div class="list-date">2023.06</div>
-                <div>若手優秀発表賞（日本細胞生物学会）</div>
-            </div>
-            <div class="list-row">
-                <div class="list-date">2022.06</div>
-                <div>ポスター優秀研究員賞（日本ゲノム編集学会）</div>
-            </div>
-            <div class="list-row">
-                <div class="list-date">2014.07</div>
-                <div>最優秀ポスター賞（第17回生医研リトリート2014）</div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="activities">
-        <div class="wrap">
-            <div class="sec-head reveal">
-                <div class="sec-label en"><i></i>07&nbsp;&nbsp;&nbsp;Activities</div>
-                <h2 class="sec-title">学会活動</h2>
-            </div>
-            <div class="reveal">
-<h3>所属学会</h3>
-            <div class="society-chips">
-                <div class="society-chip">日本エピジェネティクス研究会</div>
-                <div class="society-chip">日本細胞生物学会</div>
-                <div class="society-chip">日本ゲノム編集学会</div>
-                <div class="society-chip">日本分子生物学会</div>
-            </div>
-
-            <h3>運営・審査等</h3>
-            <div class="list-row">
-                <div class="list-date">2025.12</div>
-                <div>第48回日本分子生物学会年会 ポスター賞 MBSJ Poster Award 2025 審査員</div>
-            </div>
-            <div class="list-row">
-                <div class="list-date">2025.07</div>
-                <div>第77回日本細胞生物学会大会 口頭発表審査委員・セッションチェア</div>
-            </div>
-            <div class="list-row">
-                <div class="list-date">2024.07</div>
-                <div>第76回日本細胞生物学会大会 学生優秀ポスター発表賞審査委員</div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    </main>
-
-    <footer>
-        <div class="wrap en">&copy; 2026 Hiroaki Ohishi</div>
-    </footer>
-
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="拡大画像">
-        <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">&times;</button>
-        <img id="lightboxImg" alt="">
+<header id="top" class="hero dark">
+  <div class="img"><img src="images/imaginghero.webp" alt="" fetchpriority="high"></div>
+  <div class="body wrap">
+    <div>
+      <h1><span>大石 裕晃</span></h1>
+      <div class="sub">Hiroaki Ohishi, Ph.D.</div>
+      <div class="aff">獨協医科大学 ゲノム医科学 准教授<small>ライフサイエンス / ゲノム生物学 ｜ 博士（医学）（九州大学）</small></div>
     </div>
+    <div class="links">
+      <a href="https://orcid.org/0000-0001-6672-4093" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://researchmap.jp/R000003703" target="_blank" rel="noopener">researchmap</a>
+      <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202001018320334180" target="_blank" rel="noopener">J-GLOBAL</a>
+      <a href="https://x.com/HiroakiO53902" target="_blank" rel="noopener">X</a>
+      <a href="mailto:hirohishi@outlook.jp">hirohishi@outlook.jp</a>
+    </div>
+  </div>
+</header>
 
-    <script>
-        (function () {
-            var header = document.getElementById('siteHeader');
-            var hero = document.getElementById('top');
-            function onScroll() {
-                var limit = hero ? hero.offsetHeight - 90 : 60;
-                header.classList.toggle('is-solid', window.scrollY > limit);
-            }
-            onScroll();
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll);
+<section id="about" class="light">
+  <div class="wrap">
+    <div class="head"><h2>研究概要</h2><span class="en">Research</span></div>
+    <div class="two">
+      <div><p class="statement">最先端の蛍光イメージングを駆使し、時空間的な動態情報を基盤に生命現象を解き明かす。</p><p class="statement">エピゲノム編集技術の新規開発、ゲノムインプリンティングの制御機構、高次ゲノム構造による転写制御メカニズムの解明を主要テーマとしています。</p></div>
+      <div><p class="body-txt" style="margin-top:0">獨協医科大学は、豊かな自然に囲まれた静謐な環境にあり、研究活動に没頭できるロケーションです。充実した共通機器センター、医学部ならではの豊富なリソース、手厚い研究支援体制が整っており、キャリアを築く場として最適な環境を提供できます。独自の視点でサイエンスを切り拓きたい方は、ぜひお気軽にご連絡ください。</p></div>
+    </div>
+    <div class="kw"><span>エピゲノム編集</span><span>転写バースト</span><span>空間オミクス</span><span>ライブイメージング</span><span>ゲノムインプリンティング</span></div>
+  </div>
+</section>
 
-            var items = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window) {
-                var io = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (e) {
-                        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-                    });
-                }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
-                items.forEach(function (el) { io.observe(el); });
-            } else {
-                items.forEach(function (el) { el.classList.add('is-in'); });
-            }
+<section id="recruit" class="recruit dark">
+  <img src="images/imagingfoci.webp" alt="" loading="lazy">
+  <div class="body">
+    <div class="wrap">
+      <div class="tag">NOW RECRUITING</div>
+      <h2>博士研究員（ポスドク）・大学院生を募集しています</h2>
+      <p>獨協医科大学 ゲノム医科学講座 ｜ 時空間エピゲノムイメージング・ライブオミクス。「エピゲノム」と「イメージング」を融合させた独自の研究を、私たちと共に展開してくれる方を待っています。</p>
+      <a class="btn" href="https://jrecin.jst.go.jp/seek/SeekJorDetail?id=D126070366" target="_blank" rel="noopener">公募要項を見る</a>
+    </div>
+  </div>
+</section>
 
-            var box = document.getElementById('lightbox');
-            var boxImg = document.getElementById('lightboxImg');
-            function close() { box.classList.remove('open'); document.body.style.overflow = ''; }
-            document.querySelectorAll('.gallery-item').forEach(function (el) {
-                el.addEventListener('click', function () {
-                    var img = el.querySelector('img');
-                    if (!img) return;
-                    boxImg.src = img.currentSrc || img.src;
-                    boxImg.alt = img.alt || '';
-                    box.classList.add('open');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            document.getElementById('lightboxClose').addEventListener('click', close);
-            box.addEventListener('click', function (e) { if (e.target === box) close(); });
-            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-        })();
-    </script>
+<section id="team" class="light">
+  <div class="wrap">
+    <div class="head"><h2>チーム</h2><span class="en">Team</span></div>
+    <div class="team"><div class="member"><div class="role">Principal Investigator</div><div><h3>大石 裕晃</h3><div class="en">Hiroaki Ohishi, Ph.D.</div><p>獨協医科大学 ゲノム医科学 准教授。JST さきがけ研究者（兼任）。</p></div></div><div class="member staff"><div class="role">Technical Staff</div><div><h3>技術員</h3><div class="en">Technical staff</div><p>分子生物学・細胞培養・イメージングの実験を支えています。</p></div></div><div class="member staff"><div class="role">Technical Staff</div><div><h3>技術員</h3><div class="en">Technical staff</div><p>分子生物学・細胞培養・イメージングの実験を支えています。</p></div></div></div>
+    <p class="team-note">現在は3名の少人数チームです。<a href="#recruit">博士課程大学院生・ポスドクを募集中</a>。</p>
+  </div>
+</section>
+
+<section id="environment" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>研究環境</h2><span class="en">Facilities</span></div>
+    <div class="fac"><figure><img src="images/equipmicroscope.webp" alt="蛍光顕微鏡" loading="lazy" width="800" height="800"><figcaption><div class="cat">Microscope</div><h3>蛍光顕微鏡</h3><div class="model">Leica THUNDER Imager</div><p>防振台上に設置した、ライブイメージング用の蛍光顕微鏡システム。</p></figcaption></figure><figure><img src="images/equipelectroporator.webp" alt="エレクトロポレーター" loading="lazy" width="800" height="800"><figcaption><div class="cat">Electroporator</div><h3>エレクトロポレーター</h3><div class="model">NEPA GENE NEPA21 Type II</div><p>培養細胞への遺伝子導入に使用しています。</p></figcaption></figure><figure><img src="images/equipdispenser.webp" alt="自動分注機" loading="lazy" width="800" height="800"><figcaption><div class="cat">Liquid Handler</div><h3>自動分注機</h3><div class="model">Hamilton Microlab Prep</div><p>分注操作を自動化し、実験のスループットと再現性を高めています。</p></figcaption></figure></div>
+  </div>
+</section>
+
+<section id="career" class="light">
+  <div class="wrap">
+    <div class="head"><h2>経歴</h2><span class="en">Career</span></div>
+    <div class="cols">
+      <div><h3>Professional Experience</h3><ul class="tl"><li><time>2026.01 –</time><div class="t">獨協医科大学 ゲノム医科学 学内准教授</div></li><li><time>2024.10 –</time><div class="t">国立研究開発法人科学技術振興機構（JST） さきがけ研究者（兼任）</div></li><li><time>2023.03 – 2025.12</time><div class="t">九州大学 生体防御医学研究所 高深度オミクスサイエンスセンター 助教</div></li><li><time>2020.05 – 2023.02</time><div class="t">広島大学 大学院統合生命科学研究科 研究員</div></li><li><time>2020.04</time><div class="t">九州大学 生体防御医学研究所 特別研究員</div></li><li><time>2014.04 – 2016.03</time><div class="t">日本学術振興会 特別研究員（DC2）</div></li></ul></div>
+      <div><h3>Education</h3><ul class="tl"><li><time>2012.04 – 2020.03</time><div class="t">九州大学大学院 医学系学府 医学専攻（博士課程）</div></li><li><time>2006.04 – 2012.03</time><div class="t">福岡大学 薬学部 薬学科</div></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="grants" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>研究資金</h2><span class="en">Grants</span></div>
+    <div class="grp"><h3>現在進行中</h3><ul class="grants"><li><div class="prog">さきがけ<small>JST 戦略的創造研究推進事業「細胞操作」領域</small></div><div class="title">空間交差型エピゲノムによる超微細な転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2024.10 – 2028.03</div></li><li><div class="prog">基盤研究(B)<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">時空間ライブオミクスを実現するエピゲノムと高次ゲノム構造の同時可視化技術の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2028.03</div></li><li><div class="prog">中谷財団<small>（公財）中谷財団 奨励研究助成</small></div><div class="title">交差型エピゲノムによる特性変化を標的とした転写操作法の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2027.03</div></li><li><div class="prog">アステラス<small>（公財）アステラス病態代謝研究会 研究助成金</small></div><div class="title">エピゲノム交差による環境場を標的とした転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.01 – 2026.12</div></li><li><div class="prog">中島財団<small>（公財）中島記念国際交流財団 日本人若手研究者研究助成金</small></div><div class="title">膨張顕微鏡法と超解像顕微鏡を組み合わせた高精細クロマチントレーシング技術による卵子エピゲノム形成機構の解明<small>代表：大石 裕晃</small></div><div class="when"><i></i>2024.04 – 2025.03</div></li></ul></div>
+    <div class="grp"><h3>終了した課題</h3><ul class="grants done"><li><div class="prog">若手研究<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">蛍光イメージングによる時空間的なゲノムインプリンティング制御機構の解明<small>代表：大石 裕晃</small></div><div class="when">2022 – 2025</div></li><li><div class="prog">DC2<small>特別研究員奨励費</small></div><div class="title">新規KRAB-ZNFタンパク質によるエピジェネティック修飾の維持伝達機構の解明<small>代表：大石 裕晃</small></div><div class="when">2014 – 2016</div></li></ul></div>
+  </div>
+</section>
+
+<section id="publications" class="light">
+  <div class="wrap">
+    <div class="head"><h2>論文</h2><span class="en">Publications</span></div>
+    <div class="grp"><h3>原著論文 (Selected)</h3><ul class="pubs"><li><div class="yr">2024</div><div><div class="ti">Transcription-coupled changes in genomic region proximities during transcriptional bursting</div><div class="au"><b>Hiroaki Ohishi</b>, Soya Shinkai, Hitoshi Owada, Takeru Fujii, Kazufumi Hosoda, Shuichi Onami, Takashi Yamamoto, Yasuyuki Ohkawa, Hiroshi Ochiai</div><div class="jn"><em>Science Advances</em> (2024 Dec)</div></div></li><li><div class="yr">2024</div><div><div class="ti">Anti-phase clustering of regulatory factors shapes gene transcription burst</div><div class="au">Bitong Li, Yew Yan Wong, ..., <b>Hiroaki Ohishi</b>, ..., Hiroshi Ochiai, Mathias Francois</div><div class="jn"><em>bioRxiv</em> (2024 Sep)</div></div></li><li><div class="yr">2024</div><div><div class="ti">Precise immunofluorescence canceling for highly multiplexed imaging to capture specific cell states</div><div class="au">Kosuke Tomimatsu, Takeru Fujii, ..., <b>Hiroaki Ohishi</b>, ..., Hiroshi Ochiai</div><div class="jn"><em>Nature Communications</em> (2024 May)</div></div></li><li><div class="yr">2024</div><div><div class="ti">Combined and differential roles of ADD domains of DNMT3A and DNMT3L on DNA methylation landscapes in mouse germ cells</div><div class="au">Naoki Kubo, Ryuji Uehara, Shuhei Uemura, <b>Hiroaki Ohishi</b>, Kenjiro Shirane, Hiroyuki Sasaki</div><div class="jn"><em>Nature Communications</em> 15(1) (2024 Apr)</div></div></li><li><div class="yr">2023</div><div><div class="ti">The DNMT3A ADD domain is required for efficient de novo DNA methylation and maternal imprinting in mouse oocytes</div><div class="au">Ryuji Uehara, ..., <b>Hiroaki Ohishi</b>, ..., Hiroyuki Sasaki</div><div class="jn"><em>PLOS Genetics</em> 19(8) (2023 Aug)</div></div></li><li><div class="yr">2022</div><div><div class="ti">STREAMING-tag system reveals spatiotemporal relationships between transcriptional regulatory factors and transcriptional activity</div><div class="au"><b>Hiroaki Ohishi</b>, Seiru Shimada, Satoshi Uchino, ..., Hiroshi Ochiai</div><div class="jn"><em>Nature Communications</em> (2022 Dec)</div></div></li><li><div class="yr">2021</div><div><div class="ti">The DNMT3A PWWP domain is essential for the normal DNA methylation landscape in mouse somatic cells and oocytes</div><div class="au">Kanako Kibe, Kenjiro Shirane, <b>Hiroaki Ohishi</b>, ..., Hiroyuki Sasaki</div><div class="jn"><em>PLoS Genetics</em> 17(5) (2021 May)</div></div></li><li><div class="yr">2020</div><div><div class="ti">Characterization of genetic-origin-dependent monoallelic expression in mouse embryonic stem cells</div><div class="au"><b>Hiroaki Ohishi</b>, Wan Kin Au Yeung, ..., Hiroyuki Sasaki</div><div class="jn"><em>Genes to Cells</em> 25(1) 54-64 (2020 Jan)</div></div></li><li><div class="yr">2019</div><div><div class="ti">Zfp281 Shapes the Transcriptome of Trophoblast Stem Cells and Is Essential for Placental Development</div><div class="au">Takashi Ishiuchi, <b>Hiroaki Ohishi</b>, ..., Hiroyuki Sasaki</div><div class="jn"><em>Cell Reports</em> 27(6) (2019 May)</div></div></li></ul></div>
+    <div class="grp"><h3>総説・著書・プロトコル</h3><ul class="pubs"><li><div class="yr">2025</div><div><div class="ti">Recent advances in methodologies of epigenomics</div><div class="au"><b>Hiroaki Ohishi</b>, Wan Kin Au Yeung</div><div class="jn"><em>Epigenomics</em> 1-19 (2025 Nov)</div></div></li><li><div class="yr">2025</div><div><div class="ti">Measurement of Spatial Contact Map Using Sequential FISH</div><div class="au"><b>Hiroaki Ohishi</b></div><div class="jn"><em>Methods in Molecular Biology</em> 2958:327-341 (2025)</div></div></li><li><div class="yr">2025</div><div><div class="ti">Image Analysis Protocol for DNA/RNA/Immunofluorescence (IF)-seqFISH Data</div><div class="au"><b>Hiroaki Ohishi</b>, Hiroshi Ochiai</div><div class="jn"><em>Methods in Molecular Biology</em> 2856:419-432 (2025)</div></div></li><li><div class="yr">2023</div><div><div class="ti">Organization of transcription and 3D genome as revealed by live-cell imaging</div><div class="au">Hiroshi Ochiai, <b>Hiroaki Ohishi</b>, Yuko Sato, Hiroshi Kimura</div><div class="jn"><em>Current Opinion in Structural Biology</em> 81 (2023 May)</div></div></li><li><div class="yr">2023</div><div><div class="ti">STREAMING-Tag System: Technology to Enable Visualization of Transcriptional Activity and Subnuclear Localization of Specific Endogenous Genes</div><div class="au"><b>Hiroaki Ohishi</b>, Hiroshi Ochiai</div><div class="jn"><em>Methods in Molecular Biology</em> 2577:103-122 (2023)</div></div></li><li><div class="yr">2023</div><div><div class="ti jp">特定RNA分子／DNA領域のライブイメージング技術</div><div class="au"><b>大石 裕晃</b>, 落合 博</div><div class="jn">生体の科学 74(3) 260-265 (2023)</div></div></li><li><div class="yr">2020</div><div><div class="ti jp">イメージングによる空間配置情報を保持した1細胞トランスクリプトーム解析 — seqFISH＋（分担執筆）</div><div class="au"><b>大石 裕晃</b></div><div class="jn">羊土社 (2020)</div></div></li></ul></div>
+  </div>
+</section>
+
+<section id="awards" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>受賞</h2><span class="en">Awards</span></div>
+    <ul class="tl"><li><time>2023.06</time><div class="t">若手優秀発表賞（日本細胞生物学会）</div></li><li><time>2022.06</time><div class="t">ポスター優秀研究員賞（日本ゲノム編集学会）</div></li><li><time>2014.07</time><div class="t">最優秀ポスター賞（第17回生医研リトリート2014）</div></li></ul>
+  </div>
+</section>
+
+<section id="activities" class="dark" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>学会活動</h2><span class="en">Activities</span></div>
+    <div class="cols">
+      <div><h3>所属学会</h3><ul class="mem"><li>日本エピジェネティクス研究会</li><li>日本細胞生物学会</li><li>日本ゲノム編集学会</li><li>日本分子生物学会</li></ul></div>
+      <div><h3>運営・審査等</h3><ul class="tl"><li><time>2025.12</time><div class="t">第48回日本分子生物学会年会 ポスター賞 MBSJ Poster Award 2025 審査員</div></li><li><time>2025.07</time><div class="t">第77回日本細胞生物学会大会 口頭発表審査委員・セッションチェア</div></li><li><time>2024.07</time><div class="t">第76回日本細胞生物学会大会 学生優秀ポスター発表賞審査委員</div></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Hiroaki Ohishi</div>
+  <div>獨協医科大学 ゲノム医科学 ｜ 栃木県下都賀郡壬生町北小林880</div>
+</footer>
+<script>
+const nav=document.querySelector('nav'),b=nav.querySelector('.burger');
+b.addEventListener('click',()=>{const o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Close':'Menu';});
+nav.querySelectorAll('ul a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');b.textContent='Menu';b.setAttribute('aria-expanded','false');}));
+</script>
 </body>
 </html>
