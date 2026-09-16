@@ -43,6 +43,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;j
 nav .brand{font-weight:800;font-size:16px}
 nav ul{display:flex;gap:28px;list-style:none}
 nav ul a{opacity:.85}nav ul a:hover{opacity:1}
+@media(max-width:1240px){nav ul{gap:18px}}
 nav .lang a{opacity:.5}nav .lang a[aria-current]{opacity:1}
 nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cursor:pointer}
 @media(max-width:900px){
@@ -135,6 +136,21 @@ nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cur
 .light .tl li{border-color:rgba(0,0,0,.2)}
 
 /* grants */
+/* news */
+.news{list-style:none}
+.news li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:30px 0;border-top:1px solid currentColor}
+.news li:last-child{border-bottom:1px solid currentColor}
+.dark .news li{border-color:rgba(255,255,255,.25)}
+.light .news li{border-color:rgba(0,0,0,.2)}
+.news time{font-family:var(--lat);font-weight:600;font-size:14px;opacity:.6;padding-top:6px}
+.news .ncat{display:inline-block;font-family:var(--lat);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:6px 11px;border:1px solid currentColor;border-radius:999px;opacity:.55;margin-bottom:14px}
+.news .t{font-size:clamp(17px,1.6vw,24px);font-weight:700;line-height:1.45;letter-spacing:-.01em}
+.news .t a{border-bottom:1px solid currentColor}
+.news p{font-size:14px;opacity:.6;margin-top:10px;max-width:74ch;line-height:1.8}
+.news .nlinks{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-family:var(--lat);font-weight:600;font-size:13px}
+.news .nlinks a{opacity:.7;border-bottom:1px solid currentColor;padding-bottom:2px}
+.news .nlinks a:hover{opacity:1}
+@media(max-width:700px){.news li{grid-template-columns:1fr;gap:10px}.news time{padding-top:0}}
 .grants{list-style:none}
 .grants li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:32px 0;border-top:1px solid rgba(255,255,255,.25);align-items:start}
 .grants li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
@@ -181,7 +197,7 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 <body>
 <nav aria-label="Main">
   <a class="brand" href="#top">Hiroaki Ohishi</a>
-  <ul><li><a href="#about">Research</a></li><li><a href="#team">Team</a></li><li><a href="#environment">Facilities</a></li><li><a href="#career">Career</a></li><li><a href="#grants">Grants</a></li><li><a href="#publications">Publications</a></li><li><a href="#awards">Awards</a></li><li><a href="#activities">Activities</a></li></ul>
+  <ul><li><a href="#news">News</a></li><li><a href="#about">Research</a></li><li><a href="#team">Team</a></li><li><a href="#environment">Facilities</a></li><li><a href="#career">Career</a></li><li><a href="#grants">Grants</a></li><li><a href="#publications">Publications</a></li><li><a href="#awards">Awards</a></li><li><a href="#activities">Activities</a></li></ul>
   <div class="lang"><a href="index.html">JP</a> / <a href="en.html" aria-current="page">EN</a></div>
   <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
 </nav>
@@ -203,6 +219,17 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
     </div>
   </div>
 </header>
+
+<section id="news" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>News</h2></div>
+    <ul class="news">
+      <li><time>2026.09</time><div><span class="ncat">Release</span><div class="t">Released darksec</div><p>A GPU implementation of Dark sectioning (Cao et al., <em>Nature Methods</em> 2025) for removing out-of-focus background from widefield images. The algorithm is the published one: darksec reproduces its output and runs about 30&times; faster, and replaces the per-image normalisation with a single calibration per dataset and channel, so that every image in an experiment receives the same transform.</p><div class="nlinks"><a href="https://github.com/hirohishi/darksec" target="_blank" rel="noopener">GitHub</a><a href="https://doi.org/10.5281/zenodo.22782788" target="_blank" rel="noopener">DOI 10.5281/zenodo.22782788</a></div></div></li>
+      <li><time>2026.06</time><div><span class="ncat">Grant</span><div class="t">Awarded a Dokkyo Medical University Research Grant (collaborative)</div><p>Project: fate-branching dynamics of transformation and cellular senescence originating from renal cancer.</p></div></li>
+      <li><time>2026.01</time><div><span class="ncat">Appointment</span><div class="t">Appointed Associate Professor, Department of Medical Genome Science, Dokkyo Medical University</div></div></li>
+    </ul>
+  </div>
+</section>
 
 <section id="about" class="light">
   <div class="wrap">
@@ -255,8 +282,8 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 <section id="grants" class="dark">
   <div class="wrap">
     <div class="head"><h2>Grants</h2></div>
-    <div class="grp"><h3>Active</h3><ul class="grants"><li><div class="prog">JST PRESTO<small>JST Strategic Basic Research Programs, “Cell Control”</small></div><div class="title">Ultra-fine transcriptional manipulation via spatiotemporal epigenome intersection<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2024.10 – 2028.03</div></li><li><div class="prog">KAKENHI (B)<small>JSPS Grant-in-Aid for Scientific Research (B)</small></div><div class="title">Development of simultaneous visualization technology for epigenome and higher-order genome structure to realize spatiotemporal live omics<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.04 – 2028.03</div></li><li><div class="prog">Nakatani Foundation<small>Nakatani Foundation for Advancement of Measuring Technologies in Biomedical Engineering</small></div><div class="title">Development of transcriptional manipulation methods targeting characteristic changes caused by crossed epigenomes<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.04 – 2027.03</div></li><li><div class="prog">Astellas<small>Astellas Foundation for Research on Metabolic Disorders</small></div><div class="title">Transcriptional manipulation targeting environmental fields via epigenome intersection<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.01 – 2026.12</div></li><li><div class="prog">Nakajima Foundation<small>The Nakajima Foundation</small></div><div class="title">Elucidation of oocyte epigenome formation mechanisms using high-definition chromatin tracing combining expansion microscopy and super-resolution microscopy<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2024.04 – 2025.03</div></li></ul></div>
-    <div class="grp"><h3>Completed</h3><ul class="grants done"><li><div class="prog">KAKENHI (Early-Career)<small>JSPS Grant-in-Aid for Early-Career Scientists</small></div><div class="title">Elucidation of spatiotemporal genomic imprinting regulatory mechanisms via fluorescence imaging<small>PI: Hiroaki Ohishi</small></div><div class="when">2022 – 2025</div></li><li><div class="prog">JSPS DC2<small>JSPS Research Fellow</small></div><div class="title">Elucidation of maintenance and transmission mechanisms of epigenetic modifications by novel KRAB-ZNF proteins<small>PI: Hiroaki Ohishi</small></div><div class="when">2014 – 2016</div></li></ul></div>
+    <div class="grp"><h3>Active</h3><ul class="grants"><li><div class="prog">JST PRESTO<small>JST Strategic Basic Research Programs, “Cell Control”</small></div><div class="title">Ultra-fine transcriptional manipulation via spatiotemporal epigenome intersection<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2024.10 – 2028.03</div></li><li><div class="prog">KAKENHI (B)<small>JSPS Grant-in-Aid for Scientific Research (B)</small></div><div class="title">Development of simultaneous visualization technology for epigenome and higher-order genome structure to realize spatiotemporal live omics<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.04 – 2028.03</div></li><li><div class="prog">Nakatani Foundation<small>Nakatani Foundation for Advancement of Measuring Technologies in Biomedical Engineering</small></div><div class="title">Development of transcriptional manipulation methods targeting characteristic changes caused by crossed epigenomes<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.04 – 2027.03</div></li><li><div class="prog">Astellas<small>Astellas Foundation for Research on Metabolic Disorders</small></div><div class="title">Transcriptional manipulation targeting environmental fields via epigenome intersection<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2025.01 – 2026.12</div></li><li><div class="prog">Dokkyo<small>Dokkyo Medical University Research Grant (Collaborative)</small></div><div class="title">Fate-branching dynamics of transformation and cellular senescence originating from renal cancer<small>PI: Hiroaki Ohishi</small></div><div class="when"><i></i>2026.06 – 2027.03</div></li></ul></div>
+    <div class="grp"><h3>Completed</h3><ul class="grants done"><li><div class="prog">Nakajima Foundation<small>The Nakajima Foundation</small></div><div class="title">Elucidation of oocyte epigenome formation mechanisms using high-definition chromatin tracing combining expansion microscopy and super-resolution microscopy<small>PI: Hiroaki Ohishi</small></div><div class="when">2024 – 2025</div></li><li><div class="prog">KAKENHI (Early-Career)<small>JSPS Grant-in-Aid for Early-Career Scientists</small></div><div class="title">Elucidation of spatiotemporal genomic imprinting regulatory mechanisms via fluorescence imaging<small>PI: Hiroaki Ohishi</small></div><div class="when">2022 – 2025</div></li><li><div class="prog">JSPS DC2<small>JSPS Research Fellow</small></div><div class="title">Elucidation of maintenance and transmission mechanisms of epigenetic modifications by novel KRAB-ZNF proteins<small>PI: Hiroaki Ohishi</small></div><div class="when">2014 – 2016</div></li></ul></div>
   </div>
 </section>
 

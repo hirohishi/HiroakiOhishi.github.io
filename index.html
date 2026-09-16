@@ -43,6 +43,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;j
 nav .brand{font-weight:800;font-size:16px}
 nav ul{display:flex;gap:28px;list-style:none}
 nav ul a{opacity:.85}nav ul a:hover{opacity:1}
+@media(max-width:1240px){nav ul{gap:18px}}
 nav .lang a{opacity:.5}nav .lang a[aria-current]{opacity:1}
 nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cursor:pointer}
 @media(max-width:900px){
@@ -135,6 +136,21 @@ nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cur
 .light .tl li{border-color:rgba(0,0,0,.2)}
 
 /* grants */
+/* news */
+.news{list-style:none}
+.news li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:30px 0;border-top:1px solid currentColor}
+.news li:last-child{border-bottom:1px solid currentColor}
+.dark .news li{border-color:rgba(255,255,255,.25)}
+.light .news li{border-color:rgba(0,0,0,.2)}
+.news time{font-family:var(--lat);font-weight:600;font-size:14px;opacity:.6;padding-top:6px}
+.news .ncat{display:inline-block;font-family:var(--lat);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;line-height:1;padding:6px 11px;border:1px solid currentColor;border-radius:999px;opacity:.55;margin-bottom:14px}
+.news .t{font-size:clamp(17px,1.6vw,24px);font-weight:700;line-height:1.45;letter-spacing:-.01em}
+.news .t a{border-bottom:1px solid currentColor}
+.news p{font-size:14px;opacity:.6;margin-top:10px;max-width:74ch;line-height:1.8}
+.news .nlinks{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-family:var(--lat);font-weight:600;font-size:13px}
+.news .nlinks a{opacity:.7;border-bottom:1px solid currentColor;padding-bottom:2px}
+.news .nlinks a:hover{opacity:1}
+@media(max-width:700px){.news li{grid-template-columns:1fr;gap:10px}.news time{padding-top:0}}
 .grants{list-style:none}
 .grants li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:32px 0;border-top:1px solid rgba(255,255,255,.25);align-items:start}
 .grants li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
@@ -181,7 +197,7 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 <body>
 <nav aria-label="Main">
   <a class="brand" href="#top">大石 裕晃</a>
-  <ul><li><a href="#about">研究</a></li><li><a href="#team">チーム</a></li><li><a href="#environment">研究環境</a></li><li><a href="#career">経歴</a></li><li><a href="#grants">研究資金</a></li><li><a href="#publications">論文</a></li><li><a href="#awards">受賞</a></li><li><a href="#activities">学会活動</a></li></ul>
+  <ul><li><a href="#news">お知らせ</a></li><li><a href="#about">研究</a></li><li><a href="#team">チーム</a></li><li><a href="#environment">研究環境</a></li><li><a href="#career">経歴</a></li><li><a href="#grants">研究資金</a></li><li><a href="#publications">論文</a></li><li><a href="#awards">受賞</a></li><li><a href="#activities">学会活動</a></li></ul>
   <div class="lang"><a href="index.html" aria-current="page">JP</a> / <a href="en.html">EN</a></div>
   <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
 </nav>
@@ -203,6 +219,17 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
     </div>
   </div>
 </header>
+
+<section id="news" class="dark">
+  <div class="wrap">
+    <div class="head"><h2>お知らせ</h2><span class="en">News</span></div>
+    <ul class="news">
+      <li><time>2026.09</time><div><span class="ncat">Release</span><div class="t">背景除去ツール darksec を公開しました</div><p>広視野画像から焦点外の背景を除去する Dark sectioning（Cao et al., <em>Nature Methods</em> 2025）の GPU 実装です。アルゴリズムは原著のもので、出力が原著実装と一致することを確認したうえで約30倍高速化しました。あわせて、画像ごとの正規化をデータセット×チャンネル単位の較正に置き換え、実験内のすべての画像が同じ変換を受けるようにしています。</p><div class="nlinks"><a href="https://github.com/hirohishi/darksec" target="_blank" rel="noopener">GitHub</a><a href="https://doi.org/10.5281/zenodo.22782788" target="_blank" rel="noopener">DOI 10.5281/zenodo.22782788</a></div></div></li>
+      <li><time>2026.06</time><div><span class="ncat">Grant</span><div class="t">獨協医科大学 研究助成金（共同研究）に採択されました</div><p>課題名：腎がんを起点とした癌化と細胞老化の運命分岐ダイナミクスの解明</p></div></li>
+      <li><time>2026.01</time><div><span class="ncat">Appointment</span><div class="t">獨協医科大学 医学部 ゲノム医科学講座に学内准教授として着任しました</div></div></li>
+    </ul>
+  </div>
+</section>
 
 <section id="about" class="light">
   <div class="wrap">
@@ -255,8 +282,8 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 <section id="grants" class="dark">
   <div class="wrap">
     <div class="head"><h2>研究資金</h2><span class="en">Grants</span></div>
-    <div class="grp"><h3>現在進行中</h3><ul class="grants"><li><div class="prog">さきがけ<small>JST 戦略的創造研究推進事業「細胞操作」領域</small></div><div class="title">空間交差型エピゲノムによる超微細な転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2024.10 – 2028.03</div></li><li><div class="prog">基盤研究(B)<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">時空間ライブオミクスを実現するエピゲノムと高次ゲノム構造の同時可視化技術の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2028.03</div></li><li><div class="prog">中谷財団<small>（公財）中谷財団 奨励研究助成</small></div><div class="title">交差型エピゲノムによる特性変化を標的とした転写操作法の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2027.03</div></li><li><div class="prog">アステラス<small>（公財）アステラス病態代謝研究会 研究助成金</small></div><div class="title">エピゲノム交差による環境場を標的とした転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.01 – 2026.12</div></li><li><div class="prog">中島財団<small>（公財）中島記念国際交流財団 日本人若手研究者研究助成金</small></div><div class="title">膨張顕微鏡法と超解像顕微鏡を組み合わせた高精細クロマチントレーシング技術による卵子エピゲノム形成機構の解明<small>代表：大石 裕晃</small></div><div class="when"><i></i>2024.04 – 2025.03</div></li></ul></div>
-    <div class="grp"><h3>終了した課題</h3><ul class="grants done"><li><div class="prog">若手研究<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">蛍光イメージングによる時空間的なゲノムインプリンティング制御機構の解明<small>代表：大石 裕晃</small></div><div class="when">2022 – 2025</div></li><li><div class="prog">DC2<small>特別研究員奨励費</small></div><div class="title">新規KRAB-ZNFタンパク質によるエピジェネティック修飾の維持伝達機構の解明<small>代表：大石 裕晃</small></div><div class="when">2014 – 2016</div></li></ul></div>
+    <div class="grp"><h3>現在進行中</h3><ul class="grants"><li><div class="prog">さきがけ<small>JST 戦略的創造研究推進事業「細胞操作」領域</small></div><div class="title">空間交差型エピゲノムによる超微細な転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2024.10 – 2028.03</div></li><li><div class="prog">基盤研究(B)<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">時空間ライブオミクスを実現するエピゲノムと高次ゲノム構造の同時可視化技術の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2028.03</div></li><li><div class="prog">中谷財団<small>（公財）中谷財団 奨励研究助成</small></div><div class="title">交差型エピゲノムによる特性変化を標的とした転写操作法の開発<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.04 – 2027.03</div></li><li><div class="prog">アステラス<small>（公財）アステラス病態代謝研究会 研究助成金</small></div><div class="title">エピゲノム交差による環境場を標的とした転写操作<small>代表：大石 裕晃</small></div><div class="when"><i></i>2025.01 – 2026.12</div></li><li><div class="prog">獨協医大<small>獨協医科大学 研究助成金（共同研究）</small></div><div class="title">腎がんを起点とした癌化と細胞老化の運命分岐ダイナミクスの解明<small>代表：大石 裕晃</small></div><div class="when"><i></i>2026.06 – 2027.03</div></li></ul></div>
+    <div class="grp"><h3>終了した課題</h3><ul class="grants done"><li><div class="prog">中島財団<small>（公財）中島記念国際交流財団 日本人若手研究者研究助成金</small></div><div class="title">膨張顕微鏡法と超解像顕微鏡を組み合わせた高精細クロマチントレーシング技術による卵子エピゲノム形成機構の解明<small>代表：大石 裕晃</small></div><div class="when">2024 – 2025</div></li><li><div class="prog">若手研究<small>日本学術振興会 科学研究費助成事業</small></div><div class="title">蛍光イメージングによる時空間的なゲノムインプリンティング制御機構の解明<small>代表：大石 裕晃</small></div><div class="when">2022 – 2025</div></li><li><div class="prog">DC2<small>特別研究員奨励費</small></div><div class="title">新規KRAB-ZNFタンパク質によるエピジェネティック修飾の維持伝達機構の解明<small>代表：大石 裕晃</small></div><div class="when">2014 – 2016</div></li></ul></div>
   </div>
 </section>
 
