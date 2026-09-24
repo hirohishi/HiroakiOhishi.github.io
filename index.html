@@ -147,10 +147,19 @@ nav .burger{display:none;background:none;border:0;color:inherit;font:inherit;cur
 .news .t{font-size:clamp(17px,1.6vw,24px);font-weight:700;line-height:1.45;letter-spacing:-.01em}
 .news .t a{border-bottom:1px solid currentColor}
 .news p{font-size:14px;opacity:.6;margin-top:10px;max-width:74ch;line-height:1.8}
-.news .nlinks{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-family:var(--lat);font-weight:600;font-size:13px}
-.news .nlinks a{opacity:.7;border-bottom:1px solid currentColor;padding-bottom:2px}
-.news .nlinks a:hover{opacity:1}
+.news .nlinks,.theme .nlinks{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font-family:var(--lat);font-weight:600;font-size:13px}
+.news .nlinks a,.theme .nlinks a{opacity:.7;border-bottom:1px solid currentColor;padding-bottom:2px}
+.news .nlinks a:hover,.theme .nlinks a:hover{opacity:1}
 @media(max-width:700px){.news li{grid-template-columns:1fr;gap:10px}.news time{padding-top:0}}
+/* research themes (content/research.md) */
+.themes-wrap{margin-top:clamp(64px,8vw,120px)}
+.themes-h{font-family:var(--lat);font-weight:700;font-size:14px;letter-spacing:.04em;opacity:.55;margin-bottom:28px}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,3.4vw,56px);border-top:1px solid rgba(0,0,0,.2);padding-top:clamp(28px,3.4vw,48px)}
+.theme .tn{font-family:var(--lat);font-weight:800;font-size:clamp(40px,4.6vw,68px);line-height:1;letter-spacing:-.04em}
+.theme .tcat{font-family:var(--lat);font-weight:600;font-size:13px;letter-spacing:.04em;opacity:.55;margin-top:20px}
+.theme h3{font-size:clamp(19px,1.7vw,25px);font-weight:700;line-height:1.5;letter-spacing:-.01em;margin-top:8px}
+.theme p{font-size:clamp(14px,1.05vw,16px);line-height:1.95;opacity:.75;margin-top:14px}
+@media(max-width:900px){.themes{grid-template-columns:1fr}}
 .grants{list-style:none}
 .grants li{display:grid;grid-template-columns:200px 1fr 220px;gap:24px;padding:32px 0;border-top:1px solid rgba(255,255,255,.25);align-items:start}
 .grants li:last-child{border-bottom:1px solid rgba(255,255,255,.25)}
@@ -223,11 +232,13 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
 <section id="news" class="dark">
   <div class="wrap">
     <div class="head"><h2>お知らせ</h2><span class="en">News</span></div>
+    <!-- AUTO:news -->
     <ul class="news">
       <li><time>2026.09</time><div><span class="ncat">Release</span><div class="t">背景除去ツール darksec を公開しました</div><p>広視野画像から焦点外の背景を除去する Dark sectioning（Cao et al., <em>Nature Methods</em> 2025）の GPU 実装です。アルゴリズムは原著のもので、出力が原著実装と一致することを確認したうえで約30倍高速化しました。あわせて、画像ごとの正規化をデータセット×チャンネル単位の較正に置き換え、実験内のすべての画像が同じ変換を受けるようにしています。</p><div class="nlinks"><a href="https://github.com/hirohishi/darksec" target="_blank" rel="noopener">GitHub</a><a href="https://doi.org/10.5281/zenodo.22782788" target="_blank" rel="noopener">DOI 10.5281/zenodo.22782788</a></div></div></li>
       <li><time>2026.06</time><div><span class="ncat">Grant</span><div class="t">獨協医科大学 研究助成金（共同研究）に採択されました</div><p>課題名：腎がんを起点とした癌化と細胞老化の運命分岐ダイナミクスの解明</p></div></li>
       <li><time>2026.01</time><div><span class="ncat">Appointment</span><div class="t">獨協医科大学 医学部 ゲノム医科学講座に学内准教授として着任しました</div></div></li>
     </ul>
+    <!-- /AUTO:news -->
   </div>
 </section>
 
@@ -237,6 +248,16 @@ footer a{border-bottom:1px solid rgba(255,255,255,.4)}
     <div class="two">
       <div><p class="statement">最先端の蛍光イメージングを駆使し、時空間的な動態情報を基盤に生命現象を解き明かす。</p><p class="statement">エピゲノム編集技術の新規開発、ゲノムインプリンティングの制御機構、高次ゲノム構造による転写制御メカニズムの解明を主要テーマとしています。</p></div>
       <div><p class="body-txt" style="margin-top:0">獨協医科大学は、豊かな自然に囲まれた静謐な環境にあり、研究活動に没頭できるロケーションです。充実した共通機器センター、医学部ならではの豊富なリソース、手厚い研究支援体制が整っており、キャリアを築く場として最適な環境を提供できます。独自の視点でサイエンスを切り拓きたい方は、ぜひお気軽にご連絡ください。</p></div>
+    </div>
+    <div class="themes-wrap">
+      <h3 class="themes-h">研究テーマ</h3>
+      <!-- AUTO:research -->
+    <div class="themes">
+      <article class="theme"><div class="tn">01</div><div class="tcat">Epigenome Editing</div><h3>遺伝子の働きを、狙った場所で細かく調整する</h3><p>遺伝子がどれだけ働くか（転写）は、DNA の配列そのものだけでなく、DNA やその周りに付く化学的な目印「エピゲノム」によっても調節されています。私たちは、この目印を狙った場所に書き込むことで、遺伝子の働きを細かく、思いどおりに調整する技術の開発に取り組んでいます。</p></article>
+      <article class="theme"><div class="tn">02</div><div class="tcat">Live Omics</div><h3>生きた細胞の中で、ゲノムの動きを見る</h3><p>細胞の核の中で DNA は折りたたまれ、絶えず動いています。遺伝子がどこにあり、いつ働き、どんな目印が付いているのか。これらを生きた細胞のまま同時に観察できる顕微鏡技術をつくり、遺伝子の働きが決まる瞬間をとらえることを目指しています。</p></article>
+      <article class="theme"><div class="tn">03</div><div class="tcat">Image Processing</div><h3>顕微鏡画像を、速く、同じ基準で見やすくする</h3><p>厚みのある試料の顕微鏡画像には、ピントの合っていない部分の光がぼんやりと重なります。この背景を取り除く既存の手法（Dark sectioning）を GPU で高速化し、ひとつの実験のすべての画像を同じ基準で処理できるようにしたツール darksec を公開しています。</p><div class="nlinks"><a href="https://github.com/hirohishi/darksec" target="_blank" rel="noopener">GitHub</a></div></article>
+    </div>
+    <!-- /AUTO:research -->
     </div>
     <div class="kw"><span>エピゲノム編集</span><span>転写バースト</span><span>空間オミクス</span><span>ライブイメージング</span><span>ゲノムインプリンティング</span></div>
   </div>
